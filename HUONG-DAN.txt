@@ -10,3 +10,5 @@ WEBSITE CHI DOI 6B02 - BAN CAP NHAT ANH VA TUONG TAC
 PHIEN BAN 5: Album co slideshow tu dong va nut dieu khien; tro choi xao tron dap an moi luot; them goc 20/10; bo muc Ho so du thi.
 Neu da co Supabase, chay lenh ALTER TABLE o cuoi supabase.sql trong SQL Editor truoc khi dung goc 20/10.
 Loi chuc 20/10 can duyet status=approved va occasion=20-10; loi chuc 20/11 co occasion=20-11.
+
+PHIEN BAN 6: Thu tri an dong/mo khi nhan; tro choi 20 giay/cau, am thanh, phao giay, dap an random. Du lieu cong khai can Supabase va duyet noi dung.
