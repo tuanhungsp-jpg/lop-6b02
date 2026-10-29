@@ -1,0 +1,8 @@
+WEBSITE CHI DOI 6B02 - BAN CAP NHAT ANH VA TUONG TAC
+1. Giai nen ZIP, tai tat ca file va thu muc photos len GitHub repo dang lien ket Vercel. Giu nguyen cau truc.
+2. Vercel tu deploy neu repo da ket noi. Chua co thay doi nao duoc day truc tiep len website tu file ZIP nay.
+3. Loi tri an cong khai: tao project Supabase, chay supabase.sql trong SQL Editor; mo file config.js dien Project URL va anon/public key (KHONG dung service_role key). Sau do upload config.js. Quan tri vien duyet trong Table Editor, sua status=approved.
+4. Neu khong ket noi Supabase, form chi hien xem truoc, KHONG dang cong khai.
+5. Quiz: 12 cau, >=10 cau dung (83.3%, vuot moc 80%) nhan giay chung nhan dien tu co the in. Phan thuong mang tinh than, khong phai qua tang vat chat.
+6. Tranh anh hoc sinh: chi cong khai khi nha truong/phu huynh da dong y; can nhac khong cong khai ten day du, du lieu ca nhan.
+7. Can bo sung 10 loi chuc hoc sinh TU VIET, mo ta san pham 150-250 tu, danh sach thanh vien va phan cong, ban ke cong cu AI neu co de nop du thi.
