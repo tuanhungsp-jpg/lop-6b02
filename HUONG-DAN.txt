@@ -6,3 +6,7 @@ WEBSITE CHI DOI 6B02 - BAN CAP NHAT ANH VA TUONG TAC
 5. Quiz: 12 cau, >=10 cau dung (83.3%, vuot moc 80%) nhan giay chung nhan dien tu co the in. Phan thuong mang tinh than, khong phai qua tang vat chat.
 6. Tranh anh hoc sinh: chi cong khai khi nha truong/phu huynh da dong y; can nhac khong cong khai ten day du, du lieu ca nhan.
 7. Can bo sung 10 loi chuc hoc sinh TU VIET, mo ta san pham 150-250 tu, danh sach thanh vien va phan cong, ban ke cong cu AI neu co de nop du thi.
+
+PHIEN BAN 5: Album co slideshow tu dong va nut dieu khien; tro choi xao tron dap an moi luot; them goc 20/10; bo muc Ho so du thi.
+Neu da co Supabase, chay lenh ALTER TABLE o cuoi supabase.sql trong SQL Editor truoc khi dung goc 20/10.
+Loi chuc 20/10 can duyet status=approved va occasion=20-10; loi chuc 20/11 co occasion=20-11.

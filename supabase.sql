@@ -11,3 +11,6 @@ create policy "Anyone can read approved tributes" on public.tributes for select 
 create policy "Anyone can submit pending tributes" on public.tributes for insert to anon with check (status='pending');
 -- Duyệt trong Table Editor: chuyển status từ pending thành approved.
 -- Khuyến nghị bật CAPTCHA / rate limiting qua backend trước khi mở rộng công khai.
+
+-- Chạy bổ sung khi đã có bảng tributes từ phiên bản trước:
+alter table public.tributes add column if not exists occasion text not null default '20-11';
