@@ -56,14 +56,13 @@ function openLetter(author,message,occasion){$('lettertitle').textContent='Lời
 function makeEnvelopes(container,rows,occasion){
   container.innerHTML='';
   const samples=[
-    {author:'Chi đội 6B02',message:'Kính chúc thầy cô luôn mạnh khỏe, hạnh phúc và tràn đầy nhiệt huyết với nghề giáo!'},
-    {author:'Chi đội 6B02',message:'Cảm ơn thầy cô đã luôn kiên nhẫn, yêu thương và đồng hành cùng chúng em mỗi ngày.'},
-    {author:'Chi đội 6B02',message:'Nhân ngày 20/11, chúng em xin gửi tới thầy cô những lời chúc tốt đẹp và lòng biết ơn chân thành.'},
-    {author:'Chi đội 6B02',message:'Mong rằng mỗi ngày đến trường của thầy cô đều ngập tràn niềm vui và những nụ cười.'},
-    {author:'Chi đội 6B02',message:'Cảm ơn thầy cô đã chắp cánh cho ước mơ của chúng em bay xa.'},
-    {author:'Chi đội 6B02',message:'Tập thể 6B02 kính chúc thầy cô một ngày Nhà giáo Việt Nam thật ý nghĩa!'}
-  ];
-  rows=Array.isArray(rows)?[...rows]:[];
+    {author:'Tập thể Chi đội 6B02',message:'Nhân ngày Nhà giáo Việt Nam 20/11, chúng em xin gửi đến thầy cô lời cảm ơn chân thành nhất. Cảm ơn thầy cô đã kiên nhẫn dìu dắt, truyền cho chúng em tri thức và niềm tin để mỗi ngày đến trường đều là một ngày vui. Kính chúc thầy cô luôn mạnh khỏe, hạnh phúc và rạng rỡ nụ cười!'},
+    {author:'Một học trò 6B02',message:'Có những bài học không nằm trong sách vở: đó là cách sống tử tế, biết sẻ chia và không bỏ cuộc trước khó khăn. Cảm ơn thầy cô đã dạy chúng em cả những điều quý giá ấy. Chúc thầy cô ngày 20/11 ngập tràn yêu thương!'},
+    {author:'Những trái tim nhỏ 6B02',message:'Nếu mỗi ước mơ là một ngôi sao, thầy cô chính là người thắp sáng bầu trời của chúng em. Cảm ơn thầy cô vì những lời động viên đúng lúc và những tháng ngày âm thầm tận tụy. Chúng em sẽ cố gắng học tập thật tốt để thầy cô tự hào!'},
+    {author:'Học sinh lớp 6B02',message:'Chúng em có thể quên một công thức, nhưng sẽ không quên ánh mắt khích lệ khi làm đúng bài, lời an ủi khi mắc lỗi và niềm vui của thầy cô khi chúng em tiến bộ. Ngày 20/11, xin kính chúc thầy cô bình an và thật nhiều niềm vui!'},
+    {author:'Chi đội 6B02 gửi cô Lâm Thị Nga',message:'Cô Nga kính yêu! Cảm ơn cô đã đồng hành cùng tập thể 6B02, lắng nghe những tâm sự nhỏ và giúp chúng em thêm đoàn kết, tự tin, tỏa sáng. Chúng em chúc cô luôn tươi vui, mạnh khỏe và có thật nhiều kỷ niệm đẹp bên học trò!'},
+    {author:'Từ ngôi nhà nhỏ 6B02',message:'Mỗi trang vở hôm nay là một hạt mầm thầy cô vun trồng; mỗi bước trưởng thành mai sau đều có bóng dáng người đưa đò thầm lặng. Chúng em xin gửi ngàn lời biết ơn, ngàn bông hoa yêu thương đến tất cả thầy cô Trường THCS Tam Thanh. Chúc mừng ngày 20/11!'}
+  ];  rows=Array.isArray(rows)?[...rows]:[];
   for(let i=rows.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rows[i],rows[j]]=[rows[j],rows[i]]}
   const displayed=rows.slice(0,6);
   while(displayed.length<6)displayed.push(samples[displayed.length]);
