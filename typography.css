@@ -1,0 +1,98 @@
+/* Shared Vietnamese typography for every part of the class website. */
+@font-face{font-family:ClassBody;src:url('assets/fonts/be-vietnam-pro-regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:ClassBody;src:url('assets/fonts/be-vietnam-pro-semibold.ttf') format('truetype');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:ClassBody;src:url('assets/fonts/be-vietnam-pro-bold.ttf') format('truetype');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:ClassDisplay;src:url('assets/fonts/baloo-2.ttf') format('truetype');font-style:normal;font-weight:400 800;font-display:swap}
+:root{--font-body:ClassBody,'Be Vietnam Pro',sans-serif;--font-display:ClassDisplay,ClassBody,sans-serif;--text-body:18px;--text-small:14px;--text-label:13px}
+body{font-family:var(--font-body)!important;font-size:var(--text-body);line-height:1.7}
+button,input,textarea,select{font-family:var(--font-body)}
+input,textarea,select{font-size:16px;line-height:1.6}
+.head h2,.quiz-intro h2,.gratitude-banner h3,.video-corner h3,.jokes-section h3,.game-invite h3,.submit-panel h3,.reward h3,.certificate h3,.feature h3{font-family:var(--font-display)!important;font-weight:700!important;letter-spacing:-.02em!important;line-height:1.2!important}
+.head h2,.quiz-intro h2{font-size:clamp(38px,4.6vw,62px)!important}
+.video-corner h3,.jokes-section h3,.gratitude-banner h3{font-size:clamp(30px,3.4vw,44px)!important}
+.head .tag,.tag{font-family:var(--font-body);font-size:13px!important;line-height:1.7;font-weight:700!important;letter-spacing:.1em!important}
+.head p,.quiz-intro p,.video-corner p,.gratitude-banner p,.game-invite p,.joke p,.feature p{font-size:18px!important;line-height:1.85!important}
+.head p{max-width:780px!important}
+.quiz-intro h2{margin-top:16px;margin-bottom:20px}
+.feature h3{font-size:26px!important}
+.feature b{font-family:var(--font-display);font-size:23px;font-weight:600}
+.filter{font:600 16px/1.5 var(--font-body)!important;padding:12px 20px!important;min-height:48px}
+.filters{gap:12px}
+.photo .caption{font:600 15px/1.6 var(--font-body);padding-top:45px}
+.slide-shade{font:600 17px/1.6 var(--font-body)}
+.slide-actions button{min-width:44px;min-height:44px;font-size:20px}
+.notice,.smallprint,.write-entry p{font:400 14px/1.8 var(--font-body)!important}
+.video-placeholder{font-size:18px;line-height:1.7;min-width:0;overflow-wrap:anywhere}
+.video-placeholder>span{font-size:16px}
+.gratitude-banner{gap:24px}
+.gratitude-banner p{max-width:760px}
+.envelope-title{font:600 22px/1.4 var(--font-display)}
+.envelope-hint{font:400 14px/1.6 var(--font-body)}
+.btn,.write-entry .btn,.submit-panel button,.reward button{font:600 17px/1.5 var(--font-body)!important;padding:15px 22px;min-height:48px;white-space:normal}
+.letter-paper h3{font-family:YearbookTitle,cursive;font-size:38px;line-height:1.35;margin-top:15px}
+.letter-paper p{font:400 19px/1.9 var(--font-body)}
+.letter-paper small{font:600 15px/1.7 var(--font-body)}
+.submit-panel h3{font-size:34px!important;padding-right:27px;margin-bottom:12px}
+.submit-panel p{font-size:17px;line-height:1.8}
+.submit-panel label{font-size:16px;font-weight:600}
+.field{font-size:17px;line-height:1.6;padding:14px}
+.submit-panel .smallprint{font-size:14px!important}
+.compose-close,.letter-close{font-size:28px;width:44px;height:44px}
+.quiz-card h3{font-family:var(--font-display);font-size:29px;line-height:1.45}
+.game-invite h3{font-size:clamp(28px,3vw,37px)!important}
+.game-invite .invite-facts span{font:600 15px/1.5 var(--font-body);padding:10px 13px}
+.start-challenge{font:700 23px/1.4 var(--font-display);padding:17px 26px;min-height:56px}
+.option{font:600 17px/1.6 var(--font-body);padding:15px 18px;min-height:54px;white-space:normal}
+.quiz-meta{font:600 15px/1.6 var(--font-body)}
+.game-clock{font:700 18px/1.5 var(--font-body)}
+.game-feedback{font:600 17px/1.6 var(--font-body);min-height:28px}
+.quiz-controls{flex-wrap:wrap;gap:14px}
+.quiz-controls button,.game-tools button{font:600 16px/1.5 var(--font-body);padding:12px 16px;min-height:48px}
+.game-tools{gap:9px}
+.certificate p,.reward p{font-size:17px;line-height:1.8}
+.reward h3{font-size:34px}
+.certificate h3{font-size:38px}
+.joke summary{font:600 22px/1.5 var(--font-display)}
+.footer strong{font:600 24px/1.5 var(--font-display)}
+.footer p{font:400 17px/1.9 var(--font-body)}
+@media(max-width:1000px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .jokes-grid{grid-template-columns:1fr}
+  .quiz-wrap{grid-template-columns:1fr;max-width:800px;gap:30px}
+}
+@media(max-width:600px){
+  :root{--text-body:17px}
+  .head h2,.quiz-intro h2{font-size:38px!important}
+  .video-corner h3,.jokes-section h3,.gratitude-banner h3{font-size:30px!important}
+  .head p,.quiz-intro p,.video-corner p,.gratitude-banner p,.game-invite p,.joke p,.feature p{font-size:17px!important}
+  .section .container{padding-inline:20px}
+  .filters{gap:8px}
+  .filter{font-size:15px!important;padding:11px 15px!important}
+  .photo .caption{font-size:14px}
+  .slide-shade{font-size:16px}
+  .gratitude-banner{padding:24px!important;position:relative;overflow:hidden}
+  .gratitude-banner>div:first-child{position:relative;z-index:1}
+  .gratitude-banner .flower{display:none}
+  .envelope-title{font-size:21px}
+  .envelope-hint{font-size:13px}
+  .quiz-card{padding:22px!important;min-width:0}
+  .quiz-card h3{font-size:27px}
+  .game-invite{padding:18px 0}
+  .game-invite .invite-facts span{font-size:14px}
+  .option{font-size:16px;padding:14px}
+  .quiz-meta{font-size:14px}
+  .game-feedback{font-size:16px}
+  .game-tools button{font-size:15px;flex:1 1 auto}
+  .start-challenge{font-size:22px;padding:15px 20px}
+  .submit-panel h3{font-size:30px!important}
+  .compose-sheet .submit-panel{padding:56px 20px 25px!important}
+  .letter-paper{padding:52px 22px 28px}
+  .letter-paper h3{font-size:34px}
+  .letter-paper p{font-size:18px}
+  .footer strong{font-size:23px}
+  .footer p{font-size:16px}
+}
+@media(max-width:380px){
+  .cards{grid-template-columns:1fr}
+  .head h2,.quiz-intro h2{font-size:35px!important}
+}
