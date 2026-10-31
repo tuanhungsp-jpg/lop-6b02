@@ -78,9 +78,32 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}body{font-family:'Be Vietnam
 @media(max-width:900px){.nav{min-height:74px!important}.hero{padding:65px 0 76px!important}.hero-inner{gap:38px!important}.section{padding:75px 0!important}.yearbook-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.hero h1{font-size:clamp(52px,10vw,76px)!important}.links{background:#fffdf8!important;box-shadow:0 22px 45px #1b424d18!important}}
 @media(max-width:600px){.container{width:min(100% - 32px,1180px)!important}.hero{padding:46px 0 65px!important}.hero-inner{gap:28px!important}.hero h1{font-size:clamp(48px,12vw,68px)!important}.hero h2{font-size:12px!important;line-height:1.7!important}.hero p{font-size:14px!important}.hero .eyebrow{font-size:9px!important;letter-spacing:.08em!important}.hero-img{border-width:6px!important;border-radius:22px!important;transform:none!important}.section{padding:65px 0!important}.head h2{font-size:34px!important}.head p{font-size:14px!important}.feature{padding:23px!important}.profile-feature{padding:24px!important}.yearbook-grid{gap:12px!important}.yearbook-card{padding:12px!important;border-radius:18px!important}.yearbook-card strong{font-size:14px!important}.yearbook-label{font-size:9px!important}.gratitude .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.wish.envelope{padding:15px 8px!important}.gratitude-banner{padding:24px!important}.quiz-wrap{gap:25px!important}.jokes-section{margin-top:46px!important}.actions .btn{font-size:12px!important;padding:13px 18px!important}.navcta{display:none!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style><link rel="stylesheet" href="yearbook.css"/></head><body><div class="navwrap"><nav class="container nav"><a class="brand" href="#home"><span class="logo">6B</span><span>NGÔI NHÀ 6B02<small>TRƯỜNG THCS TAM THANH</small></span></a><div class="links" id="links"><a href="#gioithieu">Góc giới thiệu</a><a href="#album">Góc nhật ký</a><a href="#trian">Tri ân 20/11</a><a href="#quiz">Góc giải trí</a></div><a class="navcta" href="#trian">💌 Gửi yêu thương</a><button aria-label="Mở menu" class="menu" id="menu">☰</button></nav></div>
-<header class="hero" id="home"><div class="container hero-inner"><div><span class="eyebrow">✨ MÁI TRƯỜNG THCS TAM THANH · CHI ĐỘI 6B02</span><h1>Thanh xuân<br/><span>rực rỡ.</span></h1><h2>ĐOÀN KẾT – TỰ TIN – TỎA SÁNG</h2><p>Một góc nhỏ để cất giữ tiếng cười, tình bạn và những điều tuyệt vời nhất dưới mái trường thân yêu. Cùng viết nên hành trình đáng nhớ của chúng mình!</p><div class="actions"><a class="btn" href="#album">📸 Khám phá kỷ niệm</a><a class="btn ghost" href="#trian">💗 Góc tri ân 20/11</a></div></div><div class="hero-img"><span class="spark">✨</span><img alt="Ảnh các thành viên lớp 6B02 tại sân trường" loading="eager" src="anh-lop-6b02.jpg"/><div class="sticker">💜 Chúng mình là 6B02!</div></div></div></header>
-<div class="container stats"><div class="stat"><strong>6B02</strong><span>Chi đội thân yêu</span></div><div class="stat"><strong>20/11</strong><span>Ngày tri ân</span></div><div class="stat"><strong>∞</strong><span>Kỷ niệm đẹp</span></div></div>
+</style><link rel="stylesheet" href="yearbook.css"/><link rel="stylesheet" href="home.css"/><script src="home.js" defer></script></head><body>
+<div class="site-header" id="siteHeader">
+  <nav class="home-shell site-nav" aria-label="Điều hướng chính">
+    <a class="site-brand" href="#home" aria-label="Ngôi nhà 6B02 — Trang chủ"><span class="site-brand-mark">6B<span>02</span></span><span class="site-brand-name">NGÔI NHÀ 6B02<small>TRƯỜNG THCS TAM THANH</small></span></a>
+    <div class="site-links" id="links">
+      <a href="#home" class="is-current" aria-current="page">Trang chủ</a><a href="#gioithieu">Giới thiệu</a><a href="#album">Nhật ký lớp</a><a href="#trian">Tri ân 20/11</a><a href="#quiz">Giải trí</a>
+    </div>
+    <a class="site-tribute" href="#trian"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>Gửi yêu thương</span></a>
+    <button class="site-menu-toggle" id="menu" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div>
+<header class="home-hero" id="home">
+  <div class="home-shell">
+    <div class="home-intro">
+      <div class="home-title-group"><p class="home-eyebrow"><span></span> TRƯỜNG THCS TAM THANH <span class="home-eyebrow-divider">/</span> CHI ĐỘI 6B02</p><h1>Thanh xuân rực rỡ.<br><span>Chúng mình là <em>6B02.</em></span></h1></div>
+      <div class="home-welcome"><p>Một ngôi nhà chung. Những người bạn thân thương.<br>Cùng lưu giữ những năm tháng đẹp nhất dưới mái trường Tam Thanh.</p><a class="home-primary" href="#gioithieu">Khám phá ngôi nhà 6B02 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+    </div>
+    <figure class="home-cover">
+      <img id="homeCoverImage" class="home-cover-image" src="anh-lop-6b02.jpg" alt="Ảnh tập thể lớp 6B02 cùng thầy cô trước sân trường THCS Tam Thanh" width="2048" height="1536" fetchpriority="high" loading="eager" decoding="async">
+      <div class="home-cover-corner" aria-hidden="true"><span>6B02</span><small>OUR CLASS, OUR STORY</small></div>
+      <a class="home-cover-link" href="#album" aria-label="Xem album kỷ niệm lớp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="8" cy="10" r="1.5"/><path d="m4 18 5-5 4 4 3-3 5 5"/></svg><span>Album kỷ niệm</span><span aria-hidden="true">↗</span></a>
+      <figcaption class="home-photo-caption">Tập thể 6B02 · Trường THCS Tam Thanh</figcaption>
+    </figure>
+    <div class="home-afterword"><p><span class="home-small-star" aria-hidden="true">✦</span> Mỗi gương mặt, một mảnh ghép. Cùng nhau, chúng mình là 6B02.</p><div class="home-values"><span>Đoàn kết</span><i aria-hidden="true"></i><span>Tự tin</span><i aria-hidden="true"></i><span>Tỏa sáng</span></div><a class="home-scroll" href="#gioithieu" aria-label="Cuộn đến góc giới thiệu"><span>Viết tiếp câu chuyện</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
+  </div>
+</header>
 <section class="section yearbook-section yearbook-v2" id="gioithieu" aria-labelledby="yearbookTitle">
   <div class="yb-scene-shade" aria-hidden="true"></div>
   <div class="yb-v2-container">
