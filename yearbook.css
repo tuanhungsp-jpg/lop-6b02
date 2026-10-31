@@ -1,0 +1,165 @@
+@font-face{font-family:YearbookHand;src:url('assets/yearbook/handwriting.ttf') format('truetype');font-display:swap}
+@font-face{font-family:YearbookTitle;src:url('assets/yearbook/title.ttf') format('truetype');font-display:swap;font-weight:400 700}
+@font-face{font-family:YearbookBody;src:url('assets/yearbook/body.ttf') format('truetype');font-display:swap;font-weight:400}
+#gioithieu.yearbook-v2{--yb-ink:#174c76;--yb-blue:#075caa;--yb-gold:#eea512;--yb-paper:#faf0dc;--yb-hand:YearbookHand,'Segoe Print',cursive;--yb-body:YearbookBody,'Be Vietnam Pro',sans-serif;background:#d2b48b url('assets/yearbook/scene.webp') center center/cover no-repeat!important;padding:42px 0 24px!important;position:relative;isolation:isolate;overflow:hidden;color:var(--yb-ink);font-family:var(--yb-body);scroll-margin-top:76px;min-height:860px}
+#gioithieu *{box-sizing:border-box}
+#gioithieu .yb-scene-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#fff7df70 0%,#fff4df25 22%,#f6d79615 65%,#8d522a25 100%);pointer-events:none}
+#gioithieu .yb-v2-container{max-width:1536px;margin:auto;padding:0 34px;position:relative}
+#gioithieu .yb-title-block{margin:0 0 26px;padding:0 0 0 260px;text-align:center;position:relative;z-index:2}
+#gioithieu .yb-eyebrow{font-family:var(--yb-body);font-size:9px;letter-spacing:.21em;font-weight:700;color:#9b742e;text-shadow:0 1px 2px #fff}
+#gioithieu .yb-title-block h2{font-family:YearbookTitle,var(--yb-hand)!important;font-weight:600!important;color:var(--yb-blue)!important;font-size:clamp(64px,6.8vw,104px)!important;line-height:1.22;margin:0!important;letter-spacing:-.035em;white-space:nowrap;text-shadow:0 2px 0 #fff7}
+#gioithieu .yb-title-block h2 em{font-family:inherit;font-style:normal;color:var(--yb-gold);font-weight:500;letter-spacing:-.02em;margin-left:12px}
+#gioithieu .yb-title-heart{display:inline-block;font-family:var(--yb-hand);font-size:.52em;vertical-align:18%;margin-left:8px;transform:rotate(-10deg)}
+#gioithieu .yb-title-block p{font-family:var(--yb-body);font-size:10px;letter-spacing:.15em;color:#184f78;margin:7px 0 0;line-height:1.8;text-shadow:0 1px 3px #fff}
+#gioithieu .yb-experience{display:grid;grid-template-columns:248px minmax(0,1fr);gap:30px;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;position:relative;z-index:2;font-family:var(--yb-body);align-items:start}
+#gioithieu .yb-sidebar{display:flex;flex-direction:column;min-height:650px;margin-top:-94px;padding:12px 11px 16px;border:4px solid #f0ca7e;border-radius:22px;background:linear-gradient(100deg,#fffdf3f5,#fff5e4f5);box-shadow:inset 0 0 0 1px white,0 17px 28px #71431f35;outline:1px solid #fffbf0;gap:0;position:relative}
+#gioithieu .yb-search{display:flex;align-items:center;gap:7px;padding:8px 10px;margin-bottom:12px;border:1px solid #dcd9cb;border-radius:15px;background:#fffcf5;box-shadow:inset 0 1px 3px #69492a06;color:#5a829d}
+#gioithieu .yb-search svg{height:17px;width:17px;flex:none}
+#gioithieu .yb-search input{font:400 11px var(--yb-body);color:#254f6a;min-width:0;width:100%;border:0;background:transparent;outline:none;padding:2px 0}
+#gioithieu .yb-search:focus-within{outline:2px solid #7eafce;outline-offset:2px}
+#gioithieu .yb-sidebar-title{font-family:var(--yb-body);font-size:8px;letter-spacing:.1em;font-weight:700;color:#8a795f;padding:0 8px 10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px}
+#gioithieu .yb-sidebar-title span{font-size:8px;color:#a88851;letter-spacing:0;font-weight:400}
+#gioithieu .yb-roster{display:flex;flex-direction:column;gap:3px;max-height:500px;overflow:auto}
+#gioithieu .yb-roster button{display:flex;align-items:center;gap:12px;width:100%;padding:10px 8px;text-align:left;background:transparent;border:1px solid transparent;border-bottom:1px solid #dfcfb840;border-radius:11px;color:#174c76;font-family:var(--yb-body);cursor:pointer;transition:background .2s,box-shadow .2s}
+#gioithieu .yb-roster button[hidden]{display:none}
+#gioithieu .yb-roster button.active{background:linear-gradient(110deg,#c6e0ee,#b4d5e9);border-color:#afcfe3;box-shadow:inset 0 1px 0 #fffb}
+#gioithieu .yb-roster button:hover{background:#e1eaf0}
+#gioithieu .yb-roster button.active:hover{background:#b4d5e9}
+#gioithieu .yb-mini-photo{display:block;height:61px;width:49px;flex:none;overflow:hidden;border-radius:10px;border:2px solid #fff;box-shadow:0 2px 4px #6d5b4020;background:#dbe3dc}
+#gioithieu .yb-mini-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+#gioithieu .yb-roster-name{display:flex;flex-direction:column;gap:3px;min-width:0}
+#gioithieu .yb-roster small{font-size:10px;color:#5c7b8e;line-height:1.3}
+#gioithieu .yb-roster strong{font-size:12px;font-weight:600;line-height:1.5}
+#gioithieu .yb-roster em{font-size:8px;color:#76838b;font-style:normal;line-height:1.5}
+#gioithieu .yb-sidebar-foot{font-size:9px;text-align:center;color:#a07c40;margin-top:auto;padding-top:20px;line-height:1.8;font-family:var(--yb-body)}
+#gioithieu .yb-sidebar-foot>span{color:#cc9d41}
+#gioithieu .yb-roster-empty{font-size:11px;padding:15px 8px;color:#6a6e6c}
+#gioithieu .yb-stage{position:relative;min-width:0;padding-top:4px}
+#gioithieu .yb-plane{position:absolute;left:10px;top:-92px;display:flex;align-items:center;gap:14px;transform:rotate(-10deg);color:#1261a0;pointer-events:none;opacity:.9}
+#gioithieu .yb-plane svg{width:63px;height:63px;fill:#cae0e780;stroke-width:1}
+#gioithieu .yb-plane>span{font-family:var(--yb-hand);font-size:19px;padding-top:35px;white-space:nowrap;color:#406d88}
+#gioithieu .yb-book-shell{position:relative;display:block;padding:0 26px;min-width:0}
+#gioithieu .yb-book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%;min-height:552px;position:relative;isolation:isolate;border:11px solid #75441e;border-top-width:9px;border-bottom-width:16px;border-radius:26px 26px 12px 12px;background:#c49c67;box-shadow:0 4px 0 #a87238,0 7px 0 #5b331c,0 10px 0 #b58a52,0 17px 16px #58301750,0 26px 30px #64412345;filter:none;perspective:1800px;transform:perspective(2400px) rotateX(2deg)}
+#gioithieu .yb-book:before{content:'';position:absolute;inset:-5px -5px -10px;border:1px solid #d6a665;border-bottom:2px solid #e2b975;border-radius:23px 23px 8px 8px;z-index:8;pointer-events:none;box-shadow:inset 0 0 0 2px #59381740}
+#gioithieu .yb-book:after{content:'';position:absolute;left:-4px;right:-4px;bottom:-9px;height:11px;background:repeating-linear-gradient(0deg,#af8b57 0,#af8b57 1px,#efe0b8 1px,#efe0b8 2px);clip-path:polygon(0 0,46% 0,50% 30%,54% 0,100% 0,100% 100%,54% 100%,50% 70%,46% 100%,0 100%);z-index:6;pointer-events:none}
+#gioithieu .yb-page-stack{position:absolute;inset:-4px -1px -4px;background:#f8eacb;border-radius:16px 16px 5px 5px;z-index:-1;box-shadow:0 -2px 0 #c9b48d,0 -4px 0 #f3e4c5,0 -6px 0 #d5c29d,0 -8px 0 #f6e7c8}
+#gioithieu .yb-book-spine{position:absolute;left:50%;top:0;bottom:0;width:26px;transform:translateX(-50%);z-index:4;background:linear-gradient(90deg,transparent,#805c3520 35%,#4e331740 49%,#e8d2a670 55%,transparent);pointer-events:none}
+#gioithieu .yb-leaf{position:relative;min-width:0;overflow:hidden;padding:28px 30px;background-color:#faf0da;background-image:url('assets/yearbook/paper.webp');background-size:650px auto;background-blend-mode:multiply;box-shadow:inset 0 0 35px #b18a4030;min-height:552px}
+#gioithieu .yb-left{border-radius:15px 4% 3% 4px;box-shadow:inset 14px 0 18px #fff9,inset -18px 0 25px #71502522;background-image:linear-gradient(90deg,#d6be8b22 0%,transparent 8%,#fff5 50%,transparent 85%,#b39c6733 100%),url('assets/yearbook/paper.webp')}
+#gioithieu .yb-right{border-radius:4% 15px 4px 3%;box-shadow:inset -8px 0 16px #fff8,inset 16px 0 25px #71502520;background-image:linear-gradient(90deg,#9a804f25 0%,transparent 13%,#fff4 70%,#c2a67220 100%),url('assets/yearbook/paper.webp');padding:23px 30px 30px 30px}
+#gioithieu .yb-left:before{content:'';position:absolute;left:32px;top:47px;bottom:46px;width:78%;background:#d9e2df55;transform:rotate(3deg);clip-path:polygon(0 2%,95% 0,99% 8%,97% 20%,100% 35%,98% 52%,100% 74%,96% 100%,0 98%,2% 82%,0 60%,1% 32%);z-index:0}
+#gioithieu .yb-polaroid{position:relative;width:82%;margin:24px 0 25px 5%;padding:11px 11px 0;background:#fffdf4;transform:rotate(-6deg);box-shadow:0 9px 15px #63432133,0 1px 3px #49321e1f;z-index:2}
+#gioithieu .yb-photo{display:block;width:100%;max-width:none;aspect-ratio:4/4.65;margin:0;background:#ccdbd8;border:0;box-shadow:none;transform:none;position:relative;overflow:hidden}
+#gioithieu .yb-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;filter:sepia(.1) saturate(.85)}
+#gioithieu .yb-photo-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#fffcf0e8;backdrop-filter:blur(3px);padding:5px 9px;border-radius:2px;font:400 8px var(--yb-body);color:#75644b;white-space:nowrap;letter-spacing:.02em}
+#gioithieu .yb-nameplate{position:relative;display:flex;flex-direction:column;gap:1px;background:none;text-align:center;border-radius:0;padding:14px 0 14px;transform:none;margin:0;width:auto;box-shadow:none;z-index:1}
+#gioithieu .yb-nameplate strong{font-family:var(--yb-hand);font-size:33px;font-weight:400;color:#155a8d;line-height:1.1}
+#gioithieu .yb-nameplate small{font:400 9px var(--yb-body);letter-spacing:.09em;color:#346480;margin-top:5px}
+#gioithieu .yb-washi{position:absolute;z-index:3;top:29px;left:29%;width:105px;height:25px;transform:rotate(-10deg);background-color:#9cbcd5c9;background-image:radial-gradient(#eef6ffcc 1px,transparent 1px);background-size:9px 8px;clip-path:polygon(0 10%,100% 0,98% 18%,100% 35%,97% 51%,100% 75%,98% 100%,0 95%,2% 73%,0 51%,2% 29%);mix-blend-mode:multiply}
+#gioithieu .yb-sticky-note{position:absolute;right:10px;top:220px;width:104px;padding:18px 12px 11px 13px;color:#175789;background:#f5d68bd9;background-image:url('assets/yearbook/paper.webp');background-blend-mode:multiply;transform:rotate(9deg);font-family:var(--yb-hand);font-size:22px;line-height:1.1;z-index:3;box-shadow:1px 4px 6px #704b1725;clip-path:polygon(0 4%,20% 3%,32% 0,58% 3%,80% 0,100% 3%,99% 95%,85% 98%,62% 96%,44% 100%,21% 97%,0 100%)}
+#gioithieu .yb-sticky-note:before{content:'';position:absolute;left:15px;top:0;width:55px;height:11px;background:#f6e3ad80;transform:rotate(-7deg)}
+#gioithieu .yb-sticky-note span{display:block;text-align:right;color:#ee6b4b;font-size:23px}
+#gioithieu .yb-pencil-heart{position:absolute;font-family:var(--yb-hand);font-size:45px;color:#1268b1;line-height:1;z-index:3;font-weight:400}
+#gioithieu .yb-heart-left{top:207px;left:8px;transform:rotate(-15deg)}
+#gioithieu .yb-crown{position:absolute;width:63px;height:50px;top:30px;right:18px;z-index:3;transform:rotate(7deg);color:#e9a711}
+#gioithieu .yb-crown svg{width:100%;height:100%}
+#gioithieu .yb-flower{position:absolute;pointer-events:none;width:170px;height:190px;object-fit:contain;z-index:4;filter:drop-shadow(2px 5px 3px #75502125)}
+#gioithieu .yb-flower-left{bottom:-11px;left:-18px;transform:rotate(-17deg)}
+#gioithieu .yb-smile{position:absolute;bottom:71px;right:19px;z-index:4;width:49px;height:49px;background:radial-gradient(circle at 40% 30%,#ffe878,#edb830);border:3px solid #fff7db;border-radius:50%;transform:rotate(15deg);box-shadow:0 3px 8px #79531635;display:grid;place-items:center;color:#735316}
+#gioithieu .yb-smile span{font-size:39px;font-family:Arial,sans-serif;line-height:1;margin-top:-3px}
+#gioithieu .yb-page-number{position:absolute;bottom:11px;left:15px;right:15px;text-align:center;font:400 8px var(--yb-hand);letter-spacing:.05em;color:#ab8b53;z-index:2}
+#gioithieu .yb-top-memories{position:relative;display:flex;gap:0;align-items:flex-start;min-height:136px;padding-right:91px;margin:0 0 15px}
+#gioithieu .yb-quote{position:relative;top:auto;left:auto;right:auto;margin:11px -20px 0 -4px;padding:18px 16px 15px 20px;width:100%;min-height:105px;background:#f5e4c5b3;background-image:url('assets/yearbook/paper.webp');background-blend-mode:multiply;border:0;transform:rotate(-1.5deg);font:400 19px/1.3 var(--yb-hand);text-align:center;color:#225e8b;clip-path:polygon(0 4%,9% 2%,19% 3%,33% 0,47% 3%,62% 1%,76% 2%,90% 0,100% 3%,98% 16%,100% 30%,99% 46%,100% 65%,98% 82%,100% 96%,86% 98%,70% 97%,57% 100%,40% 97%,27% 99%,13% 97%,0 100%,2% 85%,0 64%,1% 46%,0 28%,2% 15%)}
+#gioithieu .yb-sprig{position:absolute;left:5px;top:33px;font:400 25px var(--yb-hand);color:#9aaa70}
+#gioithieu .yb-quote-heart{font:400 24px var(--yb-hand);color:#dc725b;display:inline-block;margin-left:4px;vertical-align:-2px}
+#gioithieu .yb-memory-stamp{position:absolute;z-index:3;right:-7px;top:0;width:122px;padding:7px 7px 11px;margin:0;background:#fffcf0;box-shadow:0 4px 7px #79532738;transform:rotate(10deg)}
+#gioithieu .yb-memory-stamp img{display:block;width:100%;height:96px;object-fit:cover;filter:sepia(.1)}
+#gioithieu .yb-memory-stamp figcaption{font:400 15px/1 var(--yb-hand);text-align:center;color:#1a5889;margin-top:8px}
+#gioithieu .yb-memory-stamp figcaption span{color:#e96e4d;font-size:19px;display:inline-block;vertical-align:-3px}
+#gioithieu .yb-stamp-tape{position:absolute;top:-7px;left:33px;width:52px;height:21px;background:#e6c67a90;transform:rotate(-12deg);z-index:2}
+#gioithieu .yb-profile-details{display:flex;flex-direction:column;gap:7px;margin:0;padding:0;position:relative;z-index:2}
+#gioithieu .yb-detail{display:block;position:relative;margin:0;padding:9px 11px 9px 47px;min-height:49px;border:1px solid #d7b57b59;border-radius:7px;background:#fff6e136;color:#244c67}
+#gioithieu .yb-detail dt{display:block;font:600 9px/1.5 var(--yb-body);margin:0;color:#1f5479}
+#gioithieu .yb-detail dt>svg{position:absolute;left:14px;top:14px;width:21px;height:21px;stroke-width:1.7;color:#1b5476}
+#gioithieu .yb-detail dd{font:400 11px/1.6 var(--yb-body);margin:0;color:#476174}
+#gioithieu .yb-detail dd:empty{display:none}
+#gioithieu .yb-message{background:#f1dfb748;margin:0;min-height:71px;padding-top:9px;padding-bottom:10px;padding-right:20px}
+#gioithieu .yb-message dt>svg{color:#ee7a62;fill:#ee7a62;stroke-width:1;top:17px}
+#gioithieu .yb-heart-right{right:8px;bottom:126px;transform:rotate(9deg);font-size:39px;z-index:3}
+#gioithieu .yb-flower-right{bottom:-12px;right:-33px;width:142px;height:142px;transform:rotate(17deg);z-index:3}
+#gioithieu .yb-arrow{position:absolute;top:47%;width:43px;height:43px;display:grid;place-items:center;padding:10px;border:0;border-radius:50%;background:#fffdf5;color:#194f72;box-shadow:0 5px 10px #66452325;z-index:10;cursor:pointer;transition:transform .2s,background .2s;font-size:initial}
+#gioithieu .yb-arrow:hover{background:#fff;transform:scale(1.08)}
+#gioithieu .yb-arrow svg{width:100%;height:100%;stroke-width:2.3}
+#gioithieu .yb-prev{left:2px}#gioithieu .yb-next{right:2px}
+#gioithieu .yb-controls{position:relative;display:flex;justify-content:center;align-items:center;gap:10px;padding:20px 26px 8px;min-height:56px}
+#gioithieu .yb-controls>span{font:500 12px var(--yb-body);background:#fffdf5ee;border-radius:20px;padding:7px 22px;color:#1d4e70;box-shadow:0 2px 4px #68401d16;min-width:90px;text-align:center}
+#gioithieu .yb-autoplay{position:absolute;right:26px;display:flex;align-items:center;gap:8px;font:600 10px var(--yb-body);border:1px solid #fff9;border-radius:30px;background:#fffdf5f0;padding:5px 12px 5px 5px;color:#1c4c6d;box-shadow:0 3px 8px #68401d20;cursor:pointer}
+#gioithieu .yb-play-icon{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#306f9a,#0a4b79);font-size:10px;color:#fff;padding-left:1px}
+#gioithieu .yb-thumbnails{display:flex;justify-content:center;gap:10px;overflow-x:auto;padding:9px 24px 12px;max-width:100%;scrollbar-width:thin}
+#gioithieu .yb-thumbnails button{flex:none;position:relative;width:58px;height:66px;padding:3px;background:#fffdf2;border:2px solid #fff;border-radius:10px;box-shadow:0 3px 7px #68422338;cursor:pointer;transition:transform .2s;overflow:hidden}
+#gioithieu .yb-thumbnails button>img{display:block;width:100%;height:100%;border-radius:5px;object-fit:cover}
+#gioithieu .yb-thumbnails button>span{position:absolute;bottom:3px;left:3px;right:3px;background:#fffdf1d9;font:500 8px var(--yb-body);line-height:1.5;color:#295776;letter-spacing:.05em}
+#gioithieu .yb-thumbnails button.active{border-color:#0e83c4;outline:2px solid white;box-shadow:0 0 0 4px #0e83c466,0 5px 9px #68422338;transform:translateY(-2px)}
+#gioithieu .member-note{text-align:center;color:#785b35;font:400 9px/1.7 var(--yb-body);margin:13px auto 0;max-width:780px;background:#fff8e4b8;border:1px solid #fff5;border-radius:18px;padding:5px 16px;position:relative;z-index:2}
+#gioithieu button:focus-visible{outline:3px solid #176d9a;outline-offset:3px}
+#gioithieu .yb-flip{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform:rotateY(0);z-index:7;pointer-events:none;display:none;transform-style:preserve-3d}
+#gioithieu .yb-flip.turn{display:block;animation:ybTurnV2 .68s cubic-bezier(.25,.7,.2,1) both}
+#gioithieu .yb-flip-front,#gioithieu .yb-flip-back{position:absolute;inset:0;backface-visibility:hidden;background:#faf0da url('assets/yearbook/paper.webp') center/650px auto;border-radius:0 15px 4px 0;box-shadow:inset 10px 0 18px #8b6e3926}
+#gioithieu .yb-flip-back{transform:rotateY(180deg);background-color:#f3e6c7}
+@keyframes ybTurnV2{from{transform:rotateY(0deg)}to{transform:rotateY(-180deg)}}
+@media(min-width:1450px){#gioithieu .yb-book,#gioithieu .yb-leaf{min-height:575px}#gioithieu .yb-leaf{padding-left:36px;padding-right:36px}#gioithieu .yb-polaroid{width:79%;margin-top:18px}#gioithieu .yb-photo{aspect-ratio:4/4.25}#gioithieu .yb-detail{min-height:53px;padding-top:10px;padding-bottom:10px}#gioithieu .yb-detail dd{font-size:12px}#gioithieu .yb-sidebar{min-height:688px}#gioithieu .yb-sticky-note{top:235px;right:14px}#gioithieu .yb-quote{font-size:21px}#gioithieu .yb-top-memories{min-height:147px}#gioithieu .yb-nameplate strong{font-size:38px}}
+@media(max-width:1199px){#gioithieu.yearbook-v2{padding-top:30px!important;min-height:780px}#gioithieu .yb-v2-container{padding:0 22px}#gioithieu .yb-experience{grid-template-columns:200px minmax(0,1fr);gap:13px}#gioithieu .yb-title-block{padding-left:200px;margin-bottom:20px}#gioithieu .yb-title-block h2{font-size:76px!important}#gioithieu .yb-title-block p{font-size:8px}#gioithieu .yb-sidebar{min-height:620px;margin-top:-70px}#gioithieu .yb-sidebar-title{font-size:7px}#gioithieu .yb-roster button{gap:8px;padding:9px 5px}#gioithieu .yb-mini-photo{width:42px;height:54px}#gioithieu .yb-roster strong{font-size:11px}#gioithieu .yb-book-shell{padding:0 22px}#gioithieu .yb-book{border-width:8px;border-bottom-width:13px}#gioithieu .yb-book,#gioithieu .yb-leaf{min-height:520px}#gioithieu .yb-leaf{padding:24px 19px}#gioithieu .yb-right{padding:18px 20px 30px}#gioithieu .yb-polaroid{width:85%;margin:28px 0 0 2%;padding:8px 8px 0}#gioithieu .yb-photo{aspect-ratio:4/5.1}#gioithieu .yb-sticky-note{width:78px;font-size:18px;top:213px;right:3px;padding:15px 8px 8px}#gioithieu .yb-crown{width:48px;right:10px}#gioithieu .yb-nameplate strong{font-size:29px}#gioithieu .yb-nameplate{padding:12px 0}#gioithieu .yb-top-memories{padding-right:63px;min-height:125px;margin-bottom:12px}#gioithieu .yb-quote{font-size:17px;padding:13px 9px 12px 12px;margin-left:-6px;margin-right:-15px}#gioithieu .yb-memory-stamp{width:92px;right:-8px;top:3px;padding:5px 5px 8px}#gioithieu .yb-memory-stamp img{height:77px}#gioithieu .yb-memory-stamp figcaption{font-size:12px}#gioithieu .yb-stamp-tape{left:21px;width:40px;height:17px}#gioithieu .yb-detail{padding:8px 7px 8px 38px;min-height:49px}#gioithieu .yb-detail dt{font-size:8px}#gioithieu .yb-detail dd{font-size:10px}#gioithieu .yb-detail dt>svg{left:10px;top:14px;width:18px;height:18px}#gioithieu .yb-message{min-height:69px;padding-right:9px}#gioithieu .yb-flower-left{width:145px;height:160px}#gioithieu .yb-flower-right{width:120px;height:120px;right:-31px}#gioithieu .yb-smile{right:7px;bottom:61px;width:42px;height:42px}#gioithieu .yb-smile span{font-size:32px}#gioithieu .yb-arrow{width:36px;height:36px;padding:8px}#gioithieu .yb-plane{top:-77px;left:9px}#gioithieu .yb-plane svg{width:50px;height:50px}#gioithieu .yb-plane>span{font-size:17px}#gioithieu .yb-autoplay{font-size:9px}#gioithieu .yb-controls{padding-left:22px;padding-right:22px}#gioithieu .yb-autoplay{right:22px}}
+@media(max-width:940px) and (min-width:701px){#gioithieu .yb-experience{grid-template-columns:155px minmax(0,1fr);gap:6px}#gioithieu .yb-v2-container{padding:0 10px}#gioithieu .yb-title-block{padding-left:160px}#gioithieu .yb-title-block h2{font-size:64px!important}#gioithieu .yb-title-block p{font-size:7px;letter-spacing:.08em}#gioithieu .yb-sidebar{padding:10px 6px;min-height:580px;margin-top:-58px}#gioithieu .yb-roster em{display:none}#gioithieu .yb-roster button{gap:6px}#gioithieu .yb-roster strong{font-size:9px}#gioithieu .yb-mini-photo{width:34px;height:45px}#gioithieu .yb-sidebar-title{display:none}#gioithieu .yb-search{padding:7px;margin-bottom:12px}#gioithieu .yb-search input{font-size:9px}#gioithieu .yb-search svg{width:13px;height:13px}#gioithieu .yb-leaf{padding:20px 10px}#gioithieu .yb-right{padding:18px 15px 28px}#gioithieu .yb-photo{aspect-ratio:4/5.4}#gioithieu .yb-polaroid{width:86%;margin-top:36px}#gioithieu .yb-sticky-note{font-size:15px;width:67px;top:212px}#gioithieu .yb-washi{width:75px;height:20px;top:30px}#gioithieu .yb-nameplate strong{font-size:25px}#gioithieu .yb-nameplate small{font-size:7px}#gioithieu .yb-top-memories{min-height:125px;padding-right:38px}#gioithieu .yb-memory-stamp{width:70px;right:-8px;top:0}#gioithieu .yb-memory-stamp img{height:62px}#gioithieu .yb-memory-stamp figcaption{font-size:10px}#gioithieu .yb-quote{font-size:15px;padding:12px 8px 12px 8px;min-height:105px}#gioithieu .yb-detail dd{font-size:9px}#gioithieu .yb-detail dt{font-size:7px}#gioithieu .yb-detail{padding-left:31px}#gioithieu .yb-detail dt>svg{left:8px;width:15px;height:15px}#gioithieu .yb-controls>span{font-size:10px;padding:7px 12px;min-width:70px}#gioithieu .yb-autoplay{font-size:8px;padding-right:8px;gap:4px}#gioithieu .yb-play-icon{width:22px;height:22px}#gioithieu .yb-plane>span{font-size:14px}#gioithieu .yb-plane svg{width:42px;height:42px}}
+@media(max-width:700px){#gioithieu.yearbook-v2{padding:25px 0 20px!important;min-height:0;background-position:60% center!important}#gioithieu .yb-v2-container{padding:0 10px}#gioithieu .yb-title-block{padding:0;margin:0 0 24px}#gioithieu .yb-eyebrow{font-size:7px;letter-spacing:.15em}#gioithieu .yb-title-block h2{font-size:60px!important;white-space:normal;line-height:1.22}#gioithieu .yb-title-block h2 em{margin-left:3px}#gioithieu .yb-title-heart{margin-left:3px}#gioithieu .yb-title-block p{font-size:7px;letter-spacing:.1em;max-width:310px;margin:4px auto 0;line-height:1.7}#gioithieu .yb-experience{display:flex;flex-direction:column;gap:12px}#gioithieu .yb-stage{order:1;width:100%;padding:0}#gioithieu .yb-sidebar{order:2;width:100%;min-height:0;margin:4px 0 0;border-width:3px;border-radius:16px;padding:10px}#gioithieu .yb-sidebar-title{padding:0 4px 5px;display:flex;order:0;font-size:8px}#gioithieu .yb-search{margin-bottom:8px;border-radius:10px;padding:7px 9px}#gioithieu .yb-search input{font-size:11px}#gioithieu .yb-roster{flex-direction:row;overflow-x:auto;max-height:none;gap:6px;padding:2px 0}#gioithieu .yb-roster button{width:auto;min-width:137px;flex:none;gap:8px;padding:6px;border-bottom:0}#gioithieu .yb-roster strong{font-size:10px}#gioithieu .yb-roster small{font-size:8px}#gioithieu .yb-roster em{font-size:7px}#gioithieu .yb-mini-photo{width:35px;height:46px;border-radius:6px}#gioithieu .yb-sidebar-foot{display:none}#gioithieu .yb-plane{display:none}#gioithieu .yb-book-shell{padding:0 16px}#gioithieu .yb-book{border-width:5px;border-bottom-width:10px;border-radius:15px 15px 6px 6px;transform:none}#gioithieu .yb-book,#gioithieu .yb-leaf{min-height:430px}#gioithieu .yb-book:before{inset:-3px -3px -6px;border-radius:12px 12px 5px 5px}#gioithieu .yb-book:after{height:7px;bottom:-6px}#gioithieu .yb-book-spine{width:17px}#gioithieu .yb-leaf{padding:17px 10px 26px}#gioithieu .yb-left{border-radius:10px 4% 3% 3px}#gioithieu .yb-right{border-radius:4% 10px 3px 3%;padding:14px 11px 26px}#gioithieu .yb-polaroid{width:88%;margin:44px 0 0 0;padding:6px 6px 0;transform:rotate(-5deg)}#gioithieu .yb-photo{aspect-ratio:4/5.4}#gioithieu .yb-nameplate{padding:11px 0}#gioithieu .yb-nameplate strong{font-size:23px}#gioithieu .yb-nameplate small{font-size:6px;letter-spacing:.03em}#gioithieu .yb-photo-label{font-size:6px;padding:3px 5px;bottom:5px}#gioithieu .yb-sticky-note{top:190px;right:2px;width:57px;font-size:14px;padding:11px 5px 5px;line-height:1.1}#gioithieu .yb-sticky-note span{font-size:17px}#gioithieu .yb-crown{width:40px;right:10px;top:17px;height:34px}#gioithieu .yb-washi{width:61px;height:18px;top:48px;left:25%;background-size:7px 7px}#gioithieu .yb-heart-left{font-size:28px;left:1px;top:174px}#gioithieu .yb-flower-left{width:95px;height:115px;left:-18px;bottom:-9px}#gioithieu .yb-smile{width:31px;height:31px;border-width:2px;right:5px;bottom:53px}#gioithieu .yb-smile span{font-size:25px}#gioithieu .yb-page-number{font-size:6px;bottom:8px;left:8px;right:8px;letter-spacing:0}#gioithieu .yb-top-memories{min-height:117px;padding-right:0;margin-bottom:8px}#gioithieu .yb-quote{margin:0;padding:10px 9px 31px;min-height:103px;font-size:14px;line-height:1.2}#gioithieu .yb-sprig{display:none}#gioithieu .yb-quote-heart{font-size:18px}#gioithieu .yb-memory-stamp{width:60px;padding:4px 4px 6px;right:-3px;top:77px;transform:rotate(8deg);z-index:3}#gioithieu .yb-memory-stamp img{height:35px}#gioithieu .yb-memory-stamp figcaption{display:none}#gioithieu .yb-stamp-tape{left:17px;width:28px;height:12px;top:-5px}#gioithieu .yb-profile-details{gap:5px}#gioithieu .yb-detail{min-height:42px;padding:6px 5px 6px 27px;border-radius:5px}#gioithieu .yb-detail dt{font-size:7px;line-height:1.4}#gioithieu .yb-detail dd{font-size:8px;line-height:1.5}#gioithieu .yb-detail dt>svg{left:7px;top:12px;width:13px;height:13px}#gioithieu .yb-message{padding-right:5px;min-height:66px}#gioithieu .yb-message dt>svg{top:11px}#gioithieu .yb-flower-right{width:82px;height:90px;right:-25px;bottom:-14px}#gioithieu .yb-heart-right{font-size:27px;right:2px;bottom:100px}#gioithieu .yb-arrow{width:30px;height:30px;top:48%;padding:7px;box-shadow:0 3px 6px #6c401926}#gioithieu .yb-prev{left:0}#gioithieu .yb-next{right:0}#gioithieu .yb-controls{padding:17px 16px 6px;justify-content:space-between;min-height:50px}#gioithieu .yb-controls>span{min-width:68px;font-size:10px;padding:6px 12px}#gioithieu .yb-autoplay{position:static;font-size:9px;padding:4px 9px 4px 4px;gap:6px}#gioithieu .yb-play-icon{width:22px;height:22px;font-size:8px}#gioithieu .yb-thumbnails{gap:9px;padding:10px 16px 10px}#gioithieu .yb-thumbnails button{width:46px;height:53px;border-radius:8px;padding:2px}#gioithieu .member-note{font-size:7px;line-height:1.7;padding:6px 10px;margin-top:10px;border-radius:12px;max-width:360px}}
+@media(max-width:360px){#gioithieu .yb-title-block h2{font-size:52px!important}#gioithieu .yb-book,#gioithieu .yb-leaf{min-height:416px}#gioithieu .yb-polaroid{margin-top:51px}#gioithieu .yb-nameplate strong{font-size:20px}#gioithieu .yb-quote{font-size:12px}#gioithieu .yb-detail dd{font-size:7px}#gioithieu .yb-detail dt{font-size:6px}#gioithieu .yb-sticky-note{font-size:12px;width:50px;top:180px}#gioithieu .yb-photo-label{font-size:5px}}
+@media(prefers-reduced-motion:reduce){#gioithieu .yb-flip.turn{animation:none}#gioithieu button{transition:none!important}}
+
+/* Keep mobile headings on one line and decorative petals clear of the message. */
+@media(max-width:700px){#gioithieu .yb-title-heart{display:none}#gioithieu .yb-flower-right{width:62px;height:70px;right:-25px;bottom:-12px}}
+
+/* Keep handwritten notes and profile content clear of the decorative photos. */
+@media(min-width:1200px){
+  #gioithieu .yb-top-memories{min-height:165px}
+  #gioithieu .yb-sticky-note{width:118px;font-size:21px}
+  #gioithieu .yb-detail dd{font-size:13px}
+  #gioithieu .yb-detail dt{font-size:10px}
+  #gioithieu .yb-message{padding-right:40px}
+}
+@media(min-width:941px) and (max-width:1199px){
+  #gioithieu .yb-top-memories{min-height:143px}
+}
+/* Narrow screens show the two book pages in reading order. */
+@media(max-width:500px){
+  #gioithieu .yb-book{grid-template-columns:1fr;min-height:0}
+  #gioithieu .yb-book-spine{display:none}
+  #gioithieu .yb-leaf{min-height:0;padding:24px 22px}
+  #gioithieu .yb-left{min-height:380px;border-radius:10px 10px 0 0;box-shadow:inset 0 -12px 20px #71502515}
+  #gioithieu .yb-right{border-radius:0 0 4px 4px;border-top:1px solid #d1bb92;box-shadow:inset 0 12px 20px #71502515;padding-bottom:46px}
+  #gioithieu .yb-polaroid{width:80%;max-width:260px;margin:15px auto 24px;padding:8px 8px 0}
+  #gioithieu .yb-photo{aspect-ratio:4/3.7}
+  #gioithieu .yb-photo-label{font-size:8px}
+  #gioithieu .yb-nameplate{padding:12px 0}
+  #gioithieu .yb-nameplate strong{font-size:30px}
+  #gioithieu .yb-nameplate small{font-size:8px}
+  #gioithieu .yb-washi{width:85px;height:22px;top:27px;left:31%}
+  #gioithieu .yb-crown{top:8px;right:13px}
+  #gioithieu .yb-sticky-note{display:none}
+  #gioithieu .yb-flower-left{width:105px;height:125px;left:-10px;bottom:-5px}
+  #gioithieu .yb-smile{bottom:45px;right:12px}
+  #gioithieu .yb-page-number{font-size:8px}
+  #gioithieu .yb-top-memories{min-height:0;padding-right:0;margin-bottom:14px}
+  #gioithieu .yb-quote{font-size:20px;line-height:1.2;padding:16px 10px;min-height:125px}
+  #gioithieu .yb-memory-stamp{display:none}
+  #gioithieu .yb-memory-stamp img{height:70px}
+  #gioithieu .yb-memory-stamp figcaption{display:block;font-size:12px}
+  #gioithieu .yb-profile-details{gap:7px}
+  #gioithieu .yb-detail{padding:10px 10px 10px 37px;min-height:56px}
+  #gioithieu .yb-detail dt{font-size:10px}
+  #gioithieu .yb-detail dd{font-size:12px;line-height:1.6}
+  #gioithieu .yb-detail dt>svg{left:10px;top:16px;width:18px;height:18px}
+  #gioithieu .yb-message{padding-right:17px}
+  #gioithieu .yb-flower-right{right:-18px;bottom:-9px;width:65px;height:76px}
+  #gioithieu .yb-heart-right{bottom:123px}
+  #gioithieu .yb-flip{left:0;width:100%}
+  #gioithieu .yb-arrow{top:35%}
+}
