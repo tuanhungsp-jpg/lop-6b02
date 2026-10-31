@@ -21,7 +21,7 @@
   document.addEventListener('click', event => {
     if (!header.contains(event.target)) setOpen(false);
   });
-  const desktop = matchMedia('(min-width: 1101px)');
+  const desktop = matchMedia('(min-width: 1200px)');
   desktop.addEventListener('change', () => setOpen(false));
   const anchors = [...links.querySelectorAll('a[href^="#"]')];
   const sections = anchors.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
