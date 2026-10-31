@@ -78,7 +78,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}body{font-family:'Be Vietnam
 @media(max-width:900px){.nav{min-height:74px!important}.hero{padding:65px 0 76px!important}.hero-inner{gap:38px!important}.section{padding:75px 0!important}.yearbook-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.hero h1{font-size:clamp(52px,10vw,76px)!important}.links{background:#fffdf8!important;box-shadow:0 22px 45px #1b424d18!important}}
 @media(max-width:600px){.container{width:min(100% - 32px,1180px)!important}.hero{padding:46px 0 65px!important}.hero-inner{gap:28px!important}.hero h1{font-size:clamp(48px,12vw,68px)!important}.hero h2{font-size:12px!important;line-height:1.7!important}.hero p{font-size:14px!important}.hero .eyebrow{font-size:9px!important;letter-spacing:.08em!important}.hero-img{border-width:6px!important;border-radius:22px!important;transform:none!important}.section{padding:65px 0!important}.head h2{font-size:34px!important}.head p{font-size:14px!important}.feature{padding:23px!important}.profile-feature{padding:24px!important}.yearbook-grid{gap:12px!important}.yearbook-card{padding:12px!important;border-radius:18px!important}.yearbook-card strong{font-size:14px!important}.yearbook-label{font-size:9px!important}.gratitude .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.wish.envelope{padding:15px 8px!important}.gratitude-banner{padding:24px!important}.quiz-wrap{gap:25px!important}.jokes-section{margin-top:46px!important}.actions .btn{font-size:12px!important;padding:13px 18px!important}.navcta{display:none!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style><link rel="stylesheet" href="yearbook.css"/><link rel="stylesheet" href="home.css"/><link rel="stylesheet" href="typography.css"/><link rel="stylesheet" href="diary.css"/><link rel="stylesheet" href="tribute.css"/><script src="tribute.js" defer></script><script src="diary.js" defer></script><script src="home.js" defer></script></head><body>
+</style><link rel="stylesheet" href="yearbook.css"/><link rel="stylesheet" href="album-finish.css"/><link rel="stylesheet" href="home.css"/><link rel="stylesheet" href="typography.css"/><link rel="stylesheet" href="diary.css"/><link rel="stylesheet" href="tribute.css"/><script src="tribute.js" defer></script><script src="diary.js" defer></script><script src="home.js" defer></script></head><body>
 <div class="site-header" id="siteHeader">
   <nav class="home-shell site-nav" aria-label="Điều hướng chính">
     <a class="site-brand" href="#home" aria-label="Ngôi nhà 6B02 — Trang chủ"><span class="site-brand-mark">6B<span>02</span></span><span class="site-brand-name">NGÔI NHÀ 6B02<small>TRƯỜNG THCS TAM THANH</small></span></a>
@@ -119,9 +119,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}body{font-family:'Be Vietnam
         <div class="yb-plane" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 18-7-7 18-3-8-8-3Z"/><path d="m11 13 10-10"/></svg><span>cùng nhau lớn lên…</span></div>
         <div class="yb-book-shell">
           <button type="button" class="yb-arrow yb-prev" id="ybPrev" aria-label="Lật trang trước"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.5 5-7 7 7 7"/></svg></button>
-          <div class="yb-book" id="ybBook" aria-live="polite" aria-atomic="true">
-            <div class="yb-page-stack" aria-hidden="true"></div>
-            <div class="yb-book-spine" aria-hidden="true"></div>
+          <div class="yb-album-cover"><div class="yb-book" id="ybBook" tabindex="0" role="group" aria-label="Album kỷ yếu 6B02. Kéo góc trang hoặc dùng phím mũi tên để lật trang.">
             <div class="yb-leaf yb-left">
               <span class="yb-washi yb-washi-blue" aria-hidden="true"></span>
               <div class="yb-polaroid">
@@ -150,11 +148,11 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}body{font-family:'Be Vietnam
               <img class="yb-flower yb-flower-right" src="assets/yearbook/sunflowers.webp" alt="" aria-hidden="true">
               <span class="yb-page-number">Đoàn kết · Tự tin · Tỏa sáng</span>
             </div>
-            <div class="yb-flip" id="ybFlip" aria-hidden="true"><div class="yb-flip-front"></div><div class="yb-flip-back"></div></div>
-          </div>
+          </div></div>
           <button type="button" class="yb-arrow yb-next" id="ybNext" aria-label="Lật trang sau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 5 7 7-7 7"/></svg></button>
         </div>
-        <div class="yb-controls"><span id="ybCounter" aria-label="Trang hiện tại">01 / 04</span><button type="button" id="ybPlay" class="yb-autoplay" aria-pressed="false"><span class="yb-play-icon" aria-hidden="true">▶</span><span>Tự động lật trang</span></button></div>
+        <div class="yb-controls"><span id="ybCounter" role="status" aria-live="polite" aria-atomic="true">01 / 04</span><button type="button" id="ybPlay" class="yb-autoplay" aria-pressed="false"><span class="yb-play-icon" aria-hidden="true">▶</span><span>Tự động lật trang</span></button></div>
+        <p class="yb-turn-hint"><span id="ybPageKind">Ảnh kỷ niệm · Hồ sơ thành viên</span><span aria-hidden="true"> · </span><span id="ybGestureHint">Kéo góc trang giấy để lật</span></p>
         <div class="yb-thumbnails" id="ybThumbs" aria-label="Chọn trang kỷ yếu"></div>
       </div>
     </div>
@@ -230,4 +228,4 @@ function draw(){if(qi>=round.length){stopClock();const passed=points/round.lengt
 answered=false;selected=null;let q=round[qi];$('qmeta').textContent='CÂU '+(qi+1)+' / '+round.length;$('bar').style.width=qi/round.length*100+'%';$('question').textContent=q.question;$('options').innerHTML='';$('gamefeedback').textContent='Chọn đáp án trước khi hết 20 giây!';q.answers.forEach((opt,i)=>{let b=document.createElement('button');b.className='option';b.textContent=String.fromCharCode(65+i)+'. '+opt.label;b.onclick=()=>answer(i);$('options').appendChild(b)});$('score').textContent='⭐ '+points+' điểm';$('next').textContent=qi===round.length-1?'Xem kết quả →':'Câu tiếp theo →';$('next').disabled=true;startClock()}
 $('next').onclick=()=>{if(qi>=round.length){returnToInvite();return}if(!answered)return;qi++;draw()};$('restartgame').onclick=()=>{newRound()};$('startchallenge').onclick=()=>{$('gameinvite').hidden=true;$('gameplay').hidden=false;newRound()};$('leavegame').onclick=returnToInvite;function returnToInvite(){stopClock();$('gameplay').hidden=true;$('gameinvite').hidden=false;}$('soundtoggle').onclick=()=>{soundOn=!soundOn;$('soundtoggle').textContent=soundOn?'🔊 Âm thanh: Bật':'🔇 Âm thanh: Tắt'};returnToInvite();
 
-</script><script src="yearbook.js"></script></body></html>
+</script><script src="assets/vendor/page-flip/page-flip.browser.js"></script><script src="yearbook.js"></script></body></html>

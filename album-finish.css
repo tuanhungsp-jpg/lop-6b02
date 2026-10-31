@@ -1,0 +1,135 @@
+/* A clothbound keepsake album. Page geometry and transforms belong to StPageFlip. */
+#gioithieu .yb-album-cover{
+  --album-leather:#194b50;
+  --album-leather-dark:#0d3039;
+  --album-gilt:#d8bc79;
+  position:relative;
+  padding:12px 13px 19px;
+  border:1px solid #17353a;
+  border-radius:19px 19px 12px 12px;
+  background-color:var(--album-leather);
+  background-image:
+    linear-gradient(90deg,#071f2826,transparent 7%,#ffffff09 24%,transparent 43%,#082c3766 49.6%,#315e5b80 50.4%,transparent 57%,#ffffff09 79%,#071f2826),
+    repeating-linear-gradient(0deg,#ffffff05 0,#ffffff05 1px,transparent 1px,transparent 3px),
+    repeating-linear-gradient(90deg,#031b1d0c 0,#031b1d0c 1px,transparent 1px,transparent 4px),
+    linear-gradient(135deg,#306266,#194b50 33%,#123c44 70%,#244f50);
+  box-shadow:0 2px 0 #0c3036,0 5px 0 #c4a66a,0 8px 0 #123c40,0 12px 14px #3a281e40,0 23px 38px #3e2a2360;
+}
+#gioithieu .yb-album-cover:before{
+  content:'';
+  position:absolute;
+  inset:5px 5px 8px;
+  border:1px solid #d7be7a9e;
+  border-radius:15px 15px 8px 8px;
+  outline:1px dashed #e5d5a84f;
+  outline-offset:-4px;
+  background:
+    linear-gradient(90deg,#e4cf97,#c9ad69) left 5px top 5px/23px 1px,
+    linear-gradient(#e4cf97,#c9ad69) left 5px top 5px/1px 23px,
+    linear-gradient(90deg,#c9ad69,#e4cf97) right 5px top 5px/23px 1px,
+    linear-gradient(#e4cf97,#c9ad69) right 5px top 5px/1px 23px,
+    linear-gradient(90deg,#e4cf97,#c9ad69) left 5px bottom 5px/23px 1px,
+    linear-gradient(#c9ad69,#e4cf97) left 5px bottom 5px/1px 23px,
+    linear-gradient(90deg,#c9ad69,#e4cf97) right 5px bottom 5px/23px 1px,
+    linear-gradient(#c9ad69,#e4cf97) right 5px bottom 5px/1px 23px;
+  background-repeat:no-repeat;
+  pointer-events:none;
+  z-index:0;
+}
+#gioithieu .yb-album-cover:after{
+  content:'';
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:9px;
+  height:10px;
+  border-radius:0 0 6px 6px;
+  background:repeating-linear-gradient(0deg,#baa77e 0,#baa77e 1px,#fff5da 1px,#fff5da 2px,#e4d6b5 2px,#e4d6b5 3px);
+  box-shadow:0 1px 1px #071d234a;
+  clip-path:polygon(0 0,46% 0,50% 38%,54% 0,100% 0,100% 100%,54% 100%,50% 66%,46% 100%,0 100%);
+  pointer-events:none;
+  z-index:0;
+}
+#gioithieu .yb-album-cover>.yb-book{position:relative;z-index:1}
+#gioithieu .yb-album-cover .yb-leaf{
+  border-radius:3px;
+  background-color:#fff8e9;
+  background-blend-mode:normal;
+  background-size:650px auto;
+  box-shadow:inset 0 0 26px #a58a4020;
+}
+#gioithieu .yb-album-cover .yb-left{
+  background-image:linear-gradient(90deg,#dac39412,transparent 8%,#fff5 40%,transparent 83%,#896b3e20 96%,#6e512c3d),url('assets/yearbook/paper.webp');
+  box-shadow:inset 6px 0 11px #fff9,inset -12px 0 24px #6c54221c;
+}
+#gioithieu .yb-album-cover .yb-right{
+  background-image:linear-gradient(90deg,#6e512c3d,#896b3e20 4%,transparent 17%,#fff4 65%,#dac39412),url('assets/yearbook/paper.webp');
+  box-shadow:inset -6px 0 11px #fff9,inset 12px 0 24px #6c54221c;
+}
+#gioithieu .yb-album-cover .yb-leaf:after{
+  content:'';
+  position:absolute;
+  right:14px;
+  bottom:16px;
+  width:22px;
+  height:22px;
+  border-right:1px solid #baa05e7d;
+  border-bottom:1px solid #baa05e7d;
+  border-radius:0 0 6px 0;
+  pointer-events:none;
+  z-index:1;
+}
+#gioithieu .yb-album-cover .yb-left:after{
+  left:14px;
+  right:auto;
+  border-right:0;
+  border-left:1px solid #baa05e7d;
+  border-radius:0 0 0 6px;
+}
+#gioithieu .yb-album-cover .yb-polaroid{
+  background:#fffdf6;
+  box-shadow:0 11px 20px #4f3e272c,0 2px 4px #4f3e271a;
+  outline:1px solid #d8c8a323;
+}
+#gioithieu .yb-album-cover .yb-photo img{filter:saturate(.95)}
+#gioithieu .yb-album-cover .yb-detail{background:#fffbf25e;border-color:#c9b58452;box-shadow:inset 0 1px 0 #ffffff73}
+#gioithieu .yb-album-cover .yb-message{background:#f4e7ca70}
+#gioithieu .yb-album-cover .yb-nameplate strong{color:#194f6b}
+#gioithieu .yb-album-cover .yb-page-number{color:#967c47}
+#gioithieu .yb-album-cover .yb-washi{box-shadow:0 1px 3px #59451e0e}
+#gioithieu .yb-book-shell .yb-arrow{border:1px solid #e4cf9d;background:#fffdf2;box-shadow:0 5px 12px #3a321e22}
+#gioithieu .yb-book-shell .yb-arrow:hover{background:#fff7da;border-color:#c9ae69}
+@media(max-width:800px){
+  #gioithieu .yb-album-cover{padding:8px 8px 14px;border-radius:14px 14px 9px 9px;box-shadow:0 2px 0 #0c3036,0 4px 0 #c4a66a,0 6px 0 #123c40,0 10px 17px #3e2a2340}
+  #gioithieu .yb-album-cover:before{inset:3px 3px 5px;border-radius:11px 11px 6px 6px;outline-offset:-3px;background:none}
+  #gioithieu .yb-album-cover:after{left:10px;right:10px;bottom:6px;height:8px;clip-path:none}
+  #gioithieu .yb-album-cover .yb-left,#gioithieu .yb-album-cover .yb-right{box-shadow:inset 0 0 23px #a58a401a}
+  #gioithieu .yb-album-cover .yb-leaf:after{right:11px;bottom:13px;width:17px;height:17px}
+  #gioithieu .yb-album-cover .yb-left:after{left:11px;right:auto}
+}
+@media(max-width:430px){
+  #gioithieu .yb-album-cover{padding:7px 7px 12px;border-radius:11px 11px 8px 8px}
+  #gioithieu .yb-album-cover:before{border-radius:8px 8px 5px 5px}
+  #gioithieu .yb-album-cover:after{bottom:5px;height:7px}
+}
+/* Geometry is controlled by the page-turning engine, independently of the cover. */
+#gioithieu .yb-album-cover .yb-book{display:block;margin-inline:auto;min-height:0;border:0;border-radius:2px;background:none;box-shadow:none;perspective:none;transform:none;filter:none;isolation:auto;outline:none}
+#gioithieu .yb-album-cover .yb-book:before,#gioithieu .yb-album-cover .yb-book:after{display:none}
+#gioithieu .yb-album-cover .yb-leaf{min-height:0;padding:0;border:0}
+#gioithieu .yb-page-content{position:relative;width:100%;height:100%;padding:28px 30px 44px;overflow:hidden;box-sizing:border-box}
+#gioithieu .yb-right .yb-page-content{padding-top:23px}
+#gioithieu .yb-album-cover .stf__wrapper{box-sizing:content-box}
+#gioithieu .yb-album-cover .stf__item{position:absolute;touch-action:pan-y pinch-zoom}
+#gioithieu .yb-album-cover[data-orientation=portrait] .yb-left,#gioithieu .yb-album-cover[data-orientation=portrait] .yb-right{box-shadow:inset 0 0 22px #a58a401a}
+#gioithieu .yb-turn-hint{text-align:center;color:#5e5d48;font:400 13px/1.8 var(--yb-body);margin:6px auto 4px;max-width:800px}
+#gioithieu .yb-turn-hint>span:first-child{color:#25596b;font-weight:600}
+#gioithieu .yb-arrow:disabled{opacity:.38;cursor:default;transform:none}
+#gioithieu .yb-book:focus-visible{outline:3px solid #d7b665;outline-offset:5px}
+#gioithieu .yb-book--fallback{display:grid!important;grid-template-columns:1fr 1fr;min-height:780px!important}
+#gioithieu .yb-book--fallback .yb-leaf{position:relative;min-height:780px}
+#gioithieu .yb-book--fallback [hidden]{display:none!important}
+@media(max-width:800px){#gioithieu .yb-page-content{padding:26px 30px 44px}#gioithieu .yb-right .yb-page-content{padding-top:26px}#gioithieu .yb-turn-hint{font-size:12px;padding:0 16px}#gioithieu .yb-book--fallback{grid-template-columns:1fr}}
+@media(max-width:430px){#gioithieu .yb-page-content,#gioithieu .yb-right .yb-page-content{padding:21px 17px 46px}#gioithieu .yb-turn-hint>span:last-child{display:block}}
+#gioithieu .yb-book[data-reduced-motion=true] .stf__block{pointer-events:none}
+#gioithieu .yb-book:not([data-reduced-motion=true]) .stf__item{cursor:grab}
+#gioithieu .yb-album-cover.is-turning .stf__item{cursor:grabbing}
