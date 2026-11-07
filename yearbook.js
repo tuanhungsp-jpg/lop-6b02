@@ -5,7 +5,201 @@
   if (!book || !roster || !thumbs) return;
   const cover = book.parentElement;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const members = Array.from({length: 4}, (_, index) => ({id: index + 1, name: `Thành viên ${String(index + 1).padStart(2, '0')}`, photo: 'anh-lop-6b02.jpg'}));
+  // Hồ sơ 6B02 lấy từ Google Forms / Google Sheets ngày 07-11-2026.
+  // Chỉ lưu tháng sinh để bảo vệ quyền riêng tư của học sinh trên website công khai.
+  const members = [
+  {
+    "id": 1,
+    "name": "Nguyễn Minh Khánh",
+    "birthMonth": "Tháng 11",
+    "hobby": "Chơi thể thao, học toán",
+    "dream": "Đỗ trường chuyên Chu Văn An",
+    "message": "Tập thể đoàn kết",
+    "photoId": "1wvCZFj0ULfrAhVjSCmAmP9T8nBhMCgPU"
+  },
+  {
+    "id": 2,
+    "name": "Nông Hoàng Trang",
+    "birthMonth": "Tháng 11",
+    "hobby": "Múa hát",
+    "dream": "Cô giáo",
+    "message": "Cả lớp đoàn kết",
+    "photoId": "16yE4QWk0saPRl4qgmGc_xjeyUpQ3OuAz"
+  },
+  {
+    "id": 3,
+    "name": "Lành Thế Đan",
+    "birthMonth": "Tháng 7",
+    "hobby": "thể thao,đọc truyện",
+    "dream": "thầy giáo",
+    "message": "chúng ta cùng nhau cố gắng học tập",
+    "photoId": "19IkzXAgcg6lP4ylSXmZgZMiWBfNR32Vy"
+  },
+  {
+    "id": 4,
+    "name": "Triệu Đông Trà",
+    "birthMonth": "Tháng 12",
+    "hobby": "Thích vẽ, nghe nhạc kpop và chơi game",
+    "dream": "Trở thành cô giáo dạy Tiếng Anh",
+    "message": "Chúc cô và các bạn một ngày 20/11 thật ý nghĩa!",
+    "photoId": "1LsgfaQwKMd3C2cFUTUzuMCwYV3b90Wun"
+  },
+  {
+    "id": 5,
+    "name": "Trần Hà Gia Linh",
+    "birthMonth": "Tháng 4",
+    "hobby": "Nhảy",
+    "dream": "Đi du học",
+    "message": "6B02 – Tập thể đoàn kết, học hết sức, chơi hết mình và luôn là niềm tự hào của thầy cô, cha mẹ!",
+    "photoId": "1eEL_eH5prAi_cpzoImlVtNPIFw8VLQuk"
+  },
+  {
+    "id": 6,
+    "name": "Trần Hạnh Nguyên",
+    "birthMonth": "Tháng 9",
+    "hobby": "Nhảy",
+    "dream": "Biên Tập Viên (QPVN-VTV)",
+    "message": "Mong lớp luôn gắn kết, đòng hành với nhau thật lâu dài, học thật giỏi để trở thành niềm tự hào của cha mẹ và thầy cô.",
+    "photoId": "117vx4_RmP4F2VtdBjPYkGuM7NJ9FKJfu"
+  },
+  {
+    "id": 7,
+    "name": "Hà Minh Anh",
+    "birthMonth": "Tháng 11",
+    "hobby": "Hát, nhảy, vẽ, MC,",
+    "dream": "Trở thành nghệ sỹ chuyên nghiệp",
+    "message": "6B02 đoàn kết, chiến thắng",
+    "photoId": "1YSwwc9-RzAZo3kVkS6nZkmQQKLhlyY4E"
+  },
+  {
+    "id": 8,
+    "name": "Vi Hà Linh",
+    "birthMonth": "Tháng 8",
+    "hobby": "Mình rất thích vẽ tranh, làm đồ chơi bằng giấy",
+    "dream": "Mình muốn sau này kiếm được thật nhiều tiền và làm được nhiều điều có ích cho xã hội",
+    "message": "Chúng ta hãy cũng nhau cố gắng rèn luyện, học tập thật tốt, sau này trở thành những công dân tốt nhé",
+    "photoId": "1OYv3qP62rSvp5Xjzg10EQ_ufHQZSB7aV"
+  },
+  {
+    "id": 9,
+    "name": "Vi Nguyễn Tường Vy",
+    "birthMonth": "Tháng 4",
+    "hobby": "Sở thích : Vẽ , nghe nhạc , chơi đàn , phi tiêu.",
+    "dream": "học chuyên Anh",
+    "message": "Hãy luôn là một tập thể đoàn kết nhé!",
+    "photoId": "1_Xdfi6idTz-js2rHn9nZlaNe9WhR5Sfb"
+  },
+  {
+    "id": 10,
+    "name": "Nông Bảo An",
+    "birthMonth": "Tháng 12",
+    "hobby": "Thích đá bóng",
+    "dream": "Mình ước mơ trở thành giáo viên. Mình sẽ cố gắng học tập thật tốt để thực hiện ước mơ ấy.",
+    "message": "Mình rất vui khi được học cùng các bạn. Mong lớp chúng mình luôn đoàn kết, giúp đỡ nhau trong học tập và có thật nhiều kỉ niệm vui dưới mái trường THCS Tam Thanh. Chúc các bạn luôn vui vẻ, tự tin và học tập ngày càng tiến bộ nhé!",
+    "photoId": "1ayG9RhIih1hQa2CQIcrWRLjZcnTkvyUz"
+  },
+  {
+    "id": 11,
+    "name": "Trần Đinh Hoàng Huy",
+    "birthMonth": "Tháng 6",
+    "hobby": "Học Toán, Tiếng Anh, Tiếng Trung, Bóng đá, Cầu lông",
+    "dream": "Là nhà luật sư tốt",
+    "message": "Chúng ta hãy đoàn kết, giúp đỡ nhau trong học tập và rèn luyện. Hoàn thành xuất sắc nhiệm vụ năm học 2026-2027",
+    "photoId": "1iyX8RVf4tOdQ93y8kDNFPirnyp9Aewv7"
+  },
+  {
+    "id": 12,
+    "name": "Dương Quỳnh Chi",
+    "birthMonth": "Tháng 11",
+    "hobby": "Vẽ tranh",
+    "dream": "Giáo viên",
+    "message": "Chặng đường phía trước còn dài, chúc mọi người luôn kiên cường, tự tin và tỏa sáng theo cách riêng của mình. Lớp mình cố lên!",
+    "photoId": "1yzEI6m7iJu0dH06LM4jjuf96idTaIHMl"
+  },
+  {
+    "id": 13,
+    "name": "Tăng Thành Nhân",
+    "birthMonth": "Tháng 6",
+    "hobby": "thích chơi thể thao và chơi nhạc",
+    "dream": "Làm bác sĩ",
+    "message": "Love 6B02",
+    "photoId": "1o8SbJimBmx6q7v1GVlfDsuukGNnSoogs"
+  },
+  {
+    "id": 14,
+    "name": "Trần Cẩm Tú",
+    "birthMonth": "Tháng 11",
+    "hobby": "con thích vẽ tranh",
+    "dream": "họa sỹ, giáo viên",
+    "message": "Gửi lời yêu thương tới lớp cùng cô giáo ạ",
+    "photoId": "1fO0LU0AuyV1nNQaozmWQOw4eNXfqtozv"
+  },
+  {
+    "id": 15,
+    "name": "Hoàng Quang Vinh",
+    "birthMonth": "Tháng 3",
+    "hobby": "Đá bóng",
+    "dream": "Cầu thủ xuất sắc",
+    "message": "Lớp chúng mình rất hòa thuận",
+    "photoId": "1PoCUK9TNkoeeevx7toWoWWwXAyUBYNbW"
+  },
+  {
+    "id": 16,
+    "name": "Hoàng Vy Minh",
+    "birthMonth": "Tháng 5",
+    "hobby": "Chơi cờ vua, đạp xe",
+    "dream": "Làm Công An",
+    "message": "Mãi iu các bạn lớp 6B02",
+    "photoId": "1uPpLeZtqadsnQreWC4NB7kBKd2iHRjjm"
+  },
+  {
+    "id": 17,
+    "name": "Hoàng Ngọc Thảo Nguyên",
+    "birthMonth": "Tháng 1",
+    "hobby": "Thích đọc sách, truyện và thích nhảy",
+    "dream": "Được trở thành một dancer",
+    "message": "Các bạn ơi! Mình và các bạn hãy cùng đoàn kết, yêu thương, giúp đỡ lẫn nhau, cùng học hành chăm chỉ và rèn luyện thật tốt để đưa tập thể lớp 6B02 luôn là niềm tự hào của các thầy cô nhé!❤️",
+    "photoId": "1bGDZ2qmh6hLfpXkuY9Xw-OSeecK2vxGO"
+  },
+  {
+    "id": 18,
+    "name": "Tống Lưu Ngọc Khương",
+    "birthMonth": "Tháng 5",
+    "hobby": "Sở thích của em là bật xa và đánh cầu",
+    "dream": "Ước mơ của em là trở thành người giàu nhất thế giới",
+    "message": "Các bạn ơi hãy đoàn kết và giúp lẫn nhau trong học tập nhé!",
+    "photoId": "1x6Zi69m3bYpiDAja9HOBoe5ARKIMWTUN"
+  },
+  {
+    "id": 19,
+    "name": "Trần Khánh Huyền",
+    "birthMonth": "Tháng 4",
+    "hobby": "Đọc sách , du lịch",
+    "dream": "Luật sư",
+    "message": "I love 6B02",
+    "photoId": "1L0JPRNZtBghQ3-4cdsbV00YmdNIDPTpD"
+  }
+];
+  const photoSrc = member => member.photoId
+    ? `https://drive.google.com/thumbnail?id=${encodeURIComponent(member.photoId)}&sz=w1000`
+    : 'anh-lop-6b02.jpg';
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[character]);
+  const photoFallback = img => {
+    if (!img) return;
+    img.addEventListener('error', () => {
+      img.src = 'anh-lop-6b02.jpg';
+      img.alt = 'Ảnh tập thể lớp 6B02 – ảnh thay thế';
+      const label = img.closest('.yb-photo')?.querySelector('.yb-photo-label');
+      if (label) label.textContent = 'Ảnh lớp · chưa mở được ảnh cá nhân';
+    }, {once: true});
+  };
+  const count = $('ybTotal');
+  if (count) count.textContent = `${members.length} hồ sơ đã gửi`;
+  const note = document.querySelector('#gioithieu .member-note');
+  if (note) note.textContent = `Đã cập nhật ${members.length} hồ sơ từ biểu mẫu lớp (07/11/2026). Ảnh cá nhân chỉ hiện khi tệp Google Drive cho phép xem; nếu chưa được chia sẻ, trang sẽ dùng ảnh tập thể.`;
+
   const templates = ['.yb-left', '.yb-right'].map(selector => {
     const template = book.querySelector(selector).cloneNode(true);
     const fields = {ybMainImage: 'photo', ybNameLeft: 'name-left', ybName: 'name', ybPageTag: 'tag'};
@@ -25,9 +219,26 @@
       page.classList.add('yb-flip-page'); page.dataset.density = 'soft'; page.dataset.member = memberIndex; page.dataset.side = side ? 'profile' : 'photo';
       page.setAttribute('role', 'article'); page.setAttribute('aria-label', `${member.name} · ${side ? 'Trang giới thiệu' : 'Trang ảnh'}`);
       page.querySelectorAll('[data-yb-field]').forEach(field => {
-        if (field.dataset.ybField === 'photo') {field.src = member.photo; field.alt = `Ảnh tập thể minh họa cho ${member.name}`;}
+        if (field.dataset.ybField === 'photo') {
+          photoFallback(field);
+          field.alt = member.photoId ? `Ảnh của ${member.name}` : `Ảnh tập thể minh họa cho ${member.name}`;
+          field.src = photoSrc(member);
+          const label = field.closest('.yb-photo')?.querySelector('.yb-photo-label');
+          if (label) label.textContent = member.photoId ? 'Ảnh thành viên' : 'Ảnh tập thể';
+        }
         else field.textContent = field.dataset.ybField === 'tag' ? `THÀNH VIÊN ${pad(member.id)}` : member.name;
       });
+      if (side === 1) {
+        const details = page.querySelectorAll('.yb-profile-details .yb-detail');
+        if (details.length >= 5) {
+          const birthdayLabel = details[1].querySelector('dt span');
+          if (birthdayLabel) birthdayLabel.textContent = 'Tháng sinh';
+          details[1].querySelector('dd').textContent = member.birthMonth;
+          details[2].querySelector('dd').textContent = member.hobby || 'Chưa chia sẻ';
+          details[3].querySelector('dd').textContent = member.dream || 'Chưa chia sẻ';
+          details[4].querySelector('dd').textContent = member.message || 'Cùng nhau viết nên những kỷ niệm đẹp!';
+        }
+      }
       const number = page.querySelector('.yb-page-number');
       if (number) number.textContent = `${pad(memberIndex * 2 + side + 1)} · ${side ? 'Đoàn kết · Tự tin · Tỏa sáng' : '6B02 · những ngày rực rỡ'}`;
       return page;
@@ -148,10 +359,14 @@
   }
   members.forEach((member, index) => {
     const button = document.createElement('button'); button.type = 'button'; button.dataset.index = index;
-    button.innerHTML = `<span class="yb-mini-photo"><img src="${member.photo}" alt=""></span><span class="yb-roster-name"><small>${pad(member.id)}</small><strong>${member.name}</strong><em>Trang minh họa</em></span>`;
+    button.innerHTML = `<span class="yb-mini-photo"><img alt=""></span><span class="yb-roster-name"><small>${pad(member.id)}</small><strong>${escapeHtml(member.name)}</strong><em>Ước mơ & lời nhắn</em></span>`;
+    const rosterImage = button.querySelector('img');
+    photoFallback(rosterImage); rosterImage.src = photoSrc(member); rosterImage.alt = `Ảnh ${member.name}`;
     button.addEventListener('click', () => {stop(); turnTo(index * 2);}); roster.appendChild(button);
     const thumb = document.createElement('button'); thumb.type = 'button'; thumb.dataset.index = index; thumb.setAttribute('aria-label', `Mở trang ${member.name}`);
-    thumb.innerHTML = `<img src="${member.photo}" alt=""><span>${pad(member.id)}</span>`;
+    thumb.innerHTML = `<img alt=""><span>${pad(member.id)}</span>`;
+    const thumbImage = thumb.querySelector('img');
+    photoFallback(thumbImage); thumbImage.src = photoSrc(member); thumbImage.alt = `Ảnh ${member.name}`;
     thumb.addEventListener('click', () => {stop(); turnTo(index * 2);}); thumbs.appendChild(thumb);
   });
   const normalize = text => text.toLocaleLowerCase('vi').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
