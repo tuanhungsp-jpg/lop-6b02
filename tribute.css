@@ -1,5 +1,5 @@
 /* The gratitude corner shares the site's Vietnamese fonts and scrapbook artwork. */
-#trian.tribute-section{--tr-ink:#153f59;--tr-blue:#115e83;--tr-gold:#ffd55c;--tr-body:ClassBody,'Be Vietnam Pro',sans-serif;--tr-hand:YearbookHand,cursive;position:relative;isolation:isolate;overflow:hidden;background:#fff7dd url('assets/yearbook/paper.webp') center/1000px auto;color:var(--tr-ink);font-family:var(--tr-body);padding:0 24px;scroll-margin-top:88px}
+#trian.tribute-section{--tr-ink:#153f59;--tr-blue:#115e83;--tr-gold:#ffd55c;--tr-body:ClassBody,'Be Vietnam Pro',sans-serif;--tr-hand:ClassBody,'Be Vietnam Pro',sans-serif;position:relative;isolation:isolate;overflow:hidden;background:#fff7dd url('assets/yearbook/paper.webp') center/1000px auto;color:var(--tr-ink);font-family:var(--tr-body);padding:0 24px;scroll-margin-top:88px}
 #trian *{box-sizing:border-box}#trian [hidden]{display:none!important}
 #trian .tribute-scenery{position:absolute;inset:0;z-index:-2;background:url('assets/tribute/garden.webp') top center/100% auto no-repeat;pointer-events:none}
 #trian:before,#trian:after{content:'';position:absolute;z-index:-1;width:180px;height:225px;background:url('assets/yearbook/sunflowers.webp') center/contain no-repeat;pointer-events:none}#trian:before{left:-70px;top:160px;transform:rotate(-17deg)}#trian:after{right:-68px;bottom:0;transform:rotate(15deg)}
@@ -105,3 +105,22 @@
 #trian .tribute-draft-actions button{font:600 14px/1.5 ClassBody,sans-serif;padding:8px 12px;border:1px solid #dbcba3;border-radius:9px;background:#fff9e8;color:#1b5974}
 #trian .tribute-draft-card p{white-space:pre-wrap;overflow-wrap:anywhere}
 #trian .tribute-form-actions button:disabled{opacity:.65;cursor:wait}
+
+/* Use consistent Vietnamese typography for readable letters and teacher profiles. */
+#trian .tribute-hero h2,#trian .tribute-hero h2 strong,#trian .tribute-letter-sheet h3{font-family:ClassDisplay,var(--tr-body);letter-spacing:normal;line-height:1.2}
+#trian .tribute-hero-quote,#trian .tribute-polaroid figcaption,#trian .tribute-postmark{font-size:16px;line-height:1.7}
+#trian .tribute-script-heading{font-family:ClassDisplay,var(--tr-body);font-size:30px;line-height:1.4}
+#trian .tribute-feature-message{font:400 16px/1.75 var(--tr-body);-webkit-line-clamp:7;overflow-wrap:anywhere}
+#trian .tribute-teacher-stationery p{font:400 17px/1.7 var(--tr-body)}
+#trian .tribute-teacher-stationery strong{font-size:20px;font-weight:600;line-height:1.6}
+#trian .tribute-teacher-copy h4{font:700 26px/1.5 var(--tr-body)}
+#trian .tribute-teacher-copy blockquote{font:400 16px/1.8 var(--tr-body);overflow-wrap:anywhere}
+#trian .tribute-letter-author{font:600 16px/1.7 var(--tr-body)}
+#trian .tribute-section-footer>p{font:600 22px/1.6 var(--tr-body)}
+#trian .tribute-challenge-art p{font:400 15px/1.6 var(--tr-body)}
+@media(max-width:600px){
+  #trian .tribute-teacher-copy h4{font-size:23px}
+  #trian .tribute-script-heading{font-size:25px}
+  #trian .tribute-letter-sheet h3{font-size:28px}
+  #trian .tribute-letter-message{font-size:17px;line-height:1.8}
+}
