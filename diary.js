@@ -58,6 +58,30 @@
     type: 'image', category: index >= 23 ? 'events' : 'activities', published: true,
     createdAt: Date.UTC(2026, 10, 10, 7) + index
   }));
+  const publishedVideos = [
+  "14ViG1Xhzu9193MShxwWMp7EhJvstUfGD",
+  "1naAm8Qjq8L_DmX6jttaKMRqWyJ4zC6Ou",
+  "1T-eCqrtMQjcgaSv_VUegevg18_x7Le8G",
+  "1cZH1Ii5HGRgB4z2rzbotV59DkwXPXlQW",
+  "165qUeriHJTSL2GbFO2pvPuJ9GTnwbIli",
+  "1HLB_c-Hh2R6fV-pJTZZLxfmFicZdzBUh",
+  "1DNayPj5Mo9oBrmMRCk9xpJ0TsMmwk1hs",
+  "1xYoAPDiF-tiuduhzDEAOllt0URadWtjd",
+  "116Gh5eSSv74jlvOU5_YwL5jWf2Xo9c_T",
+  "1notNxTxdzDAZfDSXRk2LxE4qcJ6unQEQ",
+  "1L76QXqxkKX9deHDjMuR2qDWLQQxaSRPu",
+  "1eimw6ibQeK5WXdZak6CBr6oWtaizosXN",
+  "1ejheNfw09lcmaxg75yUxSipufxrAlYAs",
+  "1o5VbAverKlMhmKcv-Z0zJD1ZYzakvH-5",
+  "10fVSP7b8-Pl1h2JXXWvF_3t-FF7mMJSh",
+  "1hO5dAjJVyFmlo1chwMIvBPO8GTkiSNeS"
+].map((id, index) => ({
+    id: `published-video-${id}`, title: `Video kỷ niệm 6B02 · ${String(index + 1).padStart(2, '0')}`,
+    src: `videos/diary/${id}.mp4`, thumbnail: `videos/diary/${id}-poster.webp`,
+    type: 'video', category: 'activities', published: true,
+    createdAt: Date.UTC(2026, 10, 10, 8) + index
+  }));
+  published.push(...publishedVideos);
   const grid = $('diaryGrid'), viewer = $('diaryViewer'), upload = $('diaryUpload');
   let memories = [], category = 'all', queue = [], viewerIndex = 0;
   let liked = new Set(), list = false;
@@ -132,13 +156,13 @@
     {
       const media = document.createElement(item.type === 'video' ? 'video' : 'img');
       media.src = item.src;
-      if (item.type === 'video') {media.controls = true; media.playsInline = true; media.preload = 'metadata';}
+      if (item.type === 'video') {media.controls = true; media.playsInline = true; media.preload = 'metadata'; if (item.thumbnail) media.poster = item.thumbnail;}
       else media.alt = item.title;
       host.appendChild(media);
     }
     $('diaryViewerTitle').textContent = item.title;
     $('diaryViewerNote').textContent = item.published
-      ? 'Ảnh kỷ niệm của lớp 6B02'
+      ? `${item.type === 'video' ? 'Video' : 'Ảnh'} kỷ niệm của lớp 6B02`
       : `Đã lưu trên trình duyệt này · ${date.format(new Date(item.createdAt))} · Chưa đăng công khai`;
     $('diaryViewerPrev').disabled = $('diaryViewerNext').disabled = queue.length < 2;
   }
@@ -147,13 +171,13 @@
     const mediaButton = document.createElement('button'); mediaButton.type = 'button'; mediaButton.className = 'diary-card-media';
     mediaButton.setAttribute('aria-label', `Xem ${item.title}`);
     {
-      const media = document.createElement(item.type === 'video' ? 'video' : 'img'); media.className = 'diary-card-image'; media.src = item.thumbnail || item.src;
-      if (item.type === 'video') {media.muted = true; media.preload = 'metadata'; media.playsInline = true;}
+      const media = document.createElement(item.type === 'video' && !item.thumbnail ? 'video' : 'img'); media.className = 'diary-card-image'; media.src = item.thumbnail || item.src;
+      if (media.tagName === 'VIDEO') {media.muted = true; media.preload = 'none'; media.playsInline = true;}
       else {media.alt = item.title; media.loading = 'lazy';}
       mediaButton.appendChild(media);
     }
     if (item.type === 'video') {const play = document.createElement('span'); play.className = 'diary-play'; play.innerHTML = icons.play; mediaButton.appendChild(play);}
-    const badge = document.createElement('span'); badge.className = 'diary-demo-badge'; badge.textContent = item.published ? 'Ảnh lớp 6B02' : 'Trên thiết bị này'; mediaButton.appendChild(badge);
+    const badge = document.createElement('span'); badge.className = 'diary-demo-badge'; badge.textContent = item.published ? `${item.type === 'video' ? 'Video' : 'Ảnh'} lớp 6B02` : 'Trên thiết bị này'; mediaButton.appendChild(badge);
     mediaButton.addEventListener('click', () => openViewer(item.id));
     const body = document.createElement('div'); body.className = 'diary-card-body';
     const title = document.createElement('button'); title.type = 'button'; title.className = 'diary-card-title';
@@ -179,7 +203,7 @@
       const count = button.querySelector('.diary-category-count'); if (count) count.textContent = allItems().filter(item => matches(item, button.dataset.diaryCategory)).length;
     }));
     const publishedCount = items.filter(item => item.published).length;
-    $('diaryCount').textContent = `${items.length} kỷ niệm · ${publishedCount} ảnh của lớp`
+    $('diaryCount').textContent = `${items.length} kỷ niệm · ${items.filter(item => item.published && item.type === 'image').length} ảnh · ${items.filter(item => item.published && item.type === 'video').length} video của lớp`
       + (items.length > publishedCount ? ` · ${items.length - publishedCount} trên trình duyệt này` : '');
     $('diaryEmpty').hidden = items.length !== 0;
   }
