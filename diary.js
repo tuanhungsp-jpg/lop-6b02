@@ -1,4 +1,4 @@
-/* Demo archive and device-local memories; no remote upload is performed. */
+/* Published class photos and private device-local memories. */
 (() => {
   const $ = id => document.getElementById(id);
   if (!$('diaryGrid')) return;
@@ -16,9 +16,48 @@
     ['all', 'Tất cả'], ['photos', 'Ảnh kỷ niệm'], ['videos', 'Video kỷ niệm'],
     ['activities', 'Hoạt động lớp'], ['events', 'Sự kiện đặc biệt']
   ];
-  const demoTitles = ['Ngày khai giảng trong mơ', 'Những nụ cười thân quen', 'Dưới tán phượng vĩ', 'Sân khấu tuổi học trò', 'Đường đến trường', 'Giờ học đáng nhớ', 'Cùng nhau cố gắng', 'Chuyến đi trải nghiệm'];
-  const demoCategories = ['events', 'photos', 'activities', 'events', 'photos', 'activities', 'activities', 'photos'];
-  const demos = demoTitles.map((title, tile) => ({id: `demo-${tile}`, title, tile, type: tile === 0 || tile === 3 ? 'video' : 'image', category: demoCategories[tile], demo: true, createdAt: 8 - tile}));
+  const publishedTitles = ["Đồng đội trên sân trường", "Sắc màu sân khấu", "Kỷ niệm cùng thầy cô", "Cùng nhau luyện tập", "Đội hình thể thao", "Những người đồng đội", "Tập thể 6B02", "Sân khấu tuổi học trò", "Ngày hội âm nhạc", "Cùng nhau đón hội", "Góc sáng tạo của chúng mình", "Sắc màu đèn hội", "Ngôi sao đêm hội", "Sân trường rực rỡ", "Dưới mái trường thân yêu", "Ghi nhận những nỗ lực · 01", "Ghi nhận những nỗ lực · 02", "Niềm vui được vinh danh", "Hoạt động giao lưu", "Trang lưu niệm", "Chúng mình dưới mái trường", "Một giờ học đáng nhớ", "Cùng nhau tiến bộ", "Thiệp tri ân thầy cô · 01", "Thiệp tri ân thầy cô · 02", "Thiệp tri ân thầy cô · 03", "Thiệp tri ân thầy cô · 04", "Thiệp tri ân thầy cô · 05", "Thiệp tri ân thầy cô · 06", "Thiệp tri ân thầy cô · 07", "Thiệp tri ân thầy cô · 08", "Thiệp tri ân thầy cô · 09", "Thiệp tri ân thầy cô · 10", "Thiệp tri ân thầy cô · 11"];
+  const published = [
+  "1cdjeb4FMlHBUvfLdMb5TZN_RGjeFbovU",
+  "1m_MBccE5C4G0jEWhPcSBGbDtcC0k_AET",
+  "11O5MSseGdRxh8NdyVT9uochZMGthyE3s",
+  "1L-HqFEv9Psc7oRFEYpueHgiXjpjJWxJY",
+  "1U-df_nqqvCi2wCsQEcUN-npVA3Yo_VRv",
+  "1ZfIXw3vVzL_ZFhhRBO5RpqgVZmYgLRIl",
+  "1HjJzq69se1-5lUnFgGW-cccXGDdPNO1w",
+  "12x3ANXCtxXhklPn6thtqISnVoEpizacS",
+  "1hTc0DbvrnDi8q__NhogXGXGlJc9CH47h",
+  "1xnPNf3_mLFUkLKgQ8Q4j2Kdcymt796sd",
+  "13EN3HVgIJ038BKZugyzZNlxmVpNpSd7s",
+  "1GobP-60Wa4Pl6z6hUQyxVDza-M14wOgg",
+  "1mEV0n-nDbeyos6ToBdN9BWM-FMHYiWXj",
+  "1HxcO30W2OHIQKNDUSvxTomUq7exC2xJy",
+  "1-c5AA9a-usJxk8jc1-6rFgka7csp0BQp",
+  "12d0KkQv1tHfJ6IWmVIajeuSmqqyng1L5",
+  "1ri4URUs350DlThb8BhegRu1-ZnZ7xFLe",
+  "19Y1DjiNM3ERw8jnDoWn6K_iBCHVuAU3F",
+  "1d2eCow9k1EdL4-E6C9pU1tEtp8qv-mtP",
+  "1mkcjQTseD9F3-R6f64NAuy9dztrrztHG",
+  "1jvkqWiVbNCMYioUEtvrp2CNjR7aghqWQ",
+  "10Xwwvhde1OUnn2S7si0sOOoYLuT5HMqs",
+  "1RTGy9MQaWEqlPFs00EvrtS7TZ2hqMPSh",
+  "1aMEiiqiDTpQVLXp1InvPAh61mtkeTPEO",
+  "1z_5jAtpB7FHvcEQbl7eaTt4foOC1M8n0",
+  "1Y1hn_L9PERrUDMFSson16Tq8-aAXlaud",
+  "13xmiB5hYmzKv6xFeGr3iJp0M0OgN4sYK",
+  "10q_VkuhW0xhUQGCgShSB8f_hs7AEJQ4a",
+  "1WfkzZEqE2_wdjz0AIavQQ1sDGXrVVs6m",
+  "1ltgEr_y3mzShvvZ_IlxkTPYKyu-GyRd6",
+  "1MSSREiZyjMdqAnaU6hlWpHubXGEFOmFw",
+  "12zTjyvTC-vtm6wDZZ8Gnr450VQ9W7eN2",
+  "10mYX_3CNTDu5_oMu-jcV-cAq92ZWPBjK",
+  "1Rn70n6ToVmNByEQvI6K1e1KymGEOZpO2"
+].map((id, index) => ({
+    id: `published-${id}`, title: publishedTitles[index],
+    src: `photos/diary/${id}.webp`, thumbnail: `photos/diary/${id}-thumb.webp`,
+    type: 'image', category: index >= 23 ? 'events' : 'activities', published: true,
+    createdAt: Date.UTC(2026, 10, 10, 7) + index
+  }));
   const grid = $('diaryGrid'), viewer = $('diaryViewer'), upload = $('diaryUpload');
   let memories = [], category = 'all', queue = [], viewerIndex = 0;
   let liked = new Set(), list = false;
@@ -61,7 +100,7 @@
     if (key === 'photos' || key === 'videos') return item.type === (key === 'photos' ? 'image' : 'video');
     return item.category === key;
   }
-  function allItems() { return [...memories, ...demos]; }
+  function allItems() { return [...memories, ...published]; }
   function visibleItems() {
     const query = normalize($('diarySearch').value.trim());
     const items = allItems().filter(item => matches(item, category) && normalize(item.title).includes(query));
@@ -79,16 +118,6 @@
       root.appendChild(button);
     });
   }
-  function makeTile(item, className) {
-    const image = document.createElement('div');
-    image.className = className;
-    image.setAttribute('role', 'img');
-    image.setAttribute('aria-label', `${item.title} — ảnh demo minh họa`);
-    image.style.backgroundImage = "url('assets/diary/demo-sheet.webp')";
-    image.style.backgroundSize = '200% 400%';
-    image.style.backgroundPosition = `${(item.tile % 2) * 100}% ${Math.floor(item.tile / 2) * 100 / 3}%`;
-    return image;
-  }
   function openViewer(id) {
     queue = visibleItems();
     viewerIndex = Math.max(0, queue.findIndex(item => item.id === id));
@@ -100,8 +129,7 @@
     if (!item) {viewer.close(); return;}
     const host = $('diaryViewerMedia');
     host.querySelector('video')?.pause(); host.replaceChildren();
-    if (item.demo) host.appendChild(makeTile(item, 'diary-demo-view'));
-    else {
+    {
       const media = document.createElement(item.type === 'video' ? 'video' : 'img');
       media.src = item.src;
       if (item.type === 'video') {media.controls = true; media.playsInline = true; media.preload = 'metadata';}
@@ -109,31 +137,30 @@
       host.appendChild(media);
     }
     $('diaryViewerTitle').textContent = item.title;
-    $('diaryViewerNote').textContent = item.demo
-      ? (item.type === 'video' ? 'Bìa video demo · Chưa có video phát thật. Chờ nạp video của lớp.' : 'Ảnh demo minh họa · Chờ thay bằng ảnh thật của lớp.')
+    $('diaryViewerNote').textContent = item.published
+      ? 'Ảnh kỷ niệm của lớp 6B02'
       : `Đã lưu trên trình duyệt này · ${date.format(new Date(item.createdAt))} · Chưa đăng công khai`;
     $('diaryViewerPrev').disabled = $('diaryViewerNext').disabled = queue.length < 2;
   }
   function renderCard(item) {
     const card = document.createElement('article'); card.className = 'diary-card'; card.dataset.memoryId = item.id;
     const mediaButton = document.createElement('button'); mediaButton.type = 'button'; mediaButton.className = 'diary-card-media';
-    mediaButton.setAttribute('aria-label', `Xem ${item.title}${item.demo ? ' (demo)' : ''}`);
-    if (item.demo) mediaButton.appendChild(makeTile(item, 'diary-card-image'));
-    else {
-      const media = document.createElement(item.type === 'video' ? 'video' : 'img'); media.className = 'diary-card-image'; media.src = item.src;
+    mediaButton.setAttribute('aria-label', `Xem ${item.title}`);
+    {
+      const media = document.createElement(item.type === 'video' ? 'video' : 'img'); media.className = 'diary-card-image'; media.src = item.thumbnail || item.src;
       if (item.type === 'video') {media.muted = true; media.preload = 'metadata'; media.playsInline = true;}
       else {media.alt = item.title; media.loading = 'lazy';}
       mediaButton.appendChild(media);
     }
     if (item.type === 'video') {const play = document.createElement('span'); play.className = 'diary-play'; play.innerHTML = icons.play; mediaButton.appendChild(play);}
-    const badge = document.createElement('span'); badge.className = 'diary-demo-badge'; badge.textContent = item.demo ? 'DEMO' : 'Trên thiết bị này'; mediaButton.appendChild(badge);
+    const badge = document.createElement('span'); badge.className = 'diary-demo-badge'; badge.textContent = item.published ? 'Ảnh lớp 6B02' : 'Trên thiết bị này'; mediaButton.appendChild(badge);
     mediaButton.addEventListener('click', () => openViewer(item.id));
     const body = document.createElement('div'); body.className = 'diary-card-body';
     const title = document.createElement('button'); title.type = 'button'; title.className = 'diary-card-title';
     title.innerHTML = icons[item.type === 'video' ? 'videos' : 'photos']; const text = document.createElement('span'); text.textContent = item.title; title.appendChild(text);
     title.addEventListener('click', () => openViewer(item.id));
     const meta = document.createElement('div'); meta.className = 'diary-card-meta';
-    const label = document.createElement('span'); label.textContent = item.demo ? (item.type === 'video' ? 'Bìa video minh họa' : 'Ảnh minh họa') : date.format(new Date(item.createdAt));
+    const label = document.createElement('span'); label.textContent = item.published ? 'Kỷ niệm của chúng mình' : date.format(new Date(item.createdAt));
     const like = document.createElement('button'); like.className = 'diary-like'; like.type = 'button'; like.innerHTML = icons.heart;
     const likeText = document.createElement('span'); likeText.textContent = 'Thích'; like.appendChild(likeText);
     function syncLike() {like.setAttribute('aria-pressed', String(liked.has(item.id))); like.setAttribute('aria-label', `${liked.has(item.id) ? 'Bỏ thích' : 'Thích'} ${item.title}`);}
@@ -151,10 +178,9 @@
       button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
       const count = button.querySelector('.diary-category-count'); if (count) count.textContent = allItems().filter(item => matches(item, button.dataset.diaryCategory)).length;
     }));
-    const demoCount = items.filter(item => item.demo).length;
-    $('diaryCount').textContent = memories.length
-      ? `${items.length} kỷ niệm · ${items.length - demoCount} trên trình duyệt này · ${demoCount} demo`
-      : `${items.length} kỷ niệm demo · Chờ ảnh thật của lớp`;
+    const publishedCount = items.filter(item => item.published).length;
+    $('diaryCount').textContent = `${items.length} kỷ niệm · ${publishedCount} ảnh của lớp`
+      + (items.length > publishedCount ? ` · ${items.length - publishedCount} trên trình duyệt này` : '');
     $('diaryEmpty').hidden = items.length !== 0;
   }
   fillCategories($('diaryCategories'), true); fillCategories($('diaryTabs'), false);
@@ -216,6 +242,6 @@
   dbPromise.then(readAll).then(records => {
     memories = records.filter(record => record.blob instanceof Blob && ['image', 'video'].includes(record.type) && Number.isFinite(record.createdAt)).map(addRecord);
     render();
-  }).catch(() => {document.querySelector('#album .diary-demo-note').textContent = 'Đang xem ảnh demo. Trình duyệt này chưa mở được bộ nhớ kỷ niệm đã lưu.';});
+  }).catch(() => {document.querySelector('#album .diary-demo-note').textContent = 'Đang xem ảnh của lớp. Trình duyệt này chưa mở được bộ nhớ kỷ niệm đã lưu.';});
   addEventListener('pagehide', event => {if (!event.persisted) urls.forEach(url => URL.revokeObjectURL(url));});
 })();
