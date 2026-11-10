@@ -77,7 +77,7 @@
   "1hO5dAjJVyFmlo1chwMIvBPO8GTkiSNeS"
 ].map((id, index) => ({
     id: `published-video-${id}`, title: `Video kỷ niệm 6B02 · ${String(index + 1).padStart(2, '0')}`,
-    src: `videos/diary/${id}.mp4`, thumbnail: `videos/diary/${id}-poster.webp`,
+    src: `videos/diary/${id}${index >= 12 ? '-upright' : ''}.mp4`, thumbnail: `videos/diary/${id}${index >= 12 ? '-upright' : ''}-poster.webp`,
     type: 'video', category: 'activities', published: true,
     createdAt: Date.UTC(2026, 10, 10, 8) + index
   }));
