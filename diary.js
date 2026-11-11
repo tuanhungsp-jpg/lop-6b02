@@ -16,7 +16,7 @@
     ['all', 'Tất cả'], ['photos', 'Ảnh kỷ niệm'], ['videos', 'Video kỷ niệm'],
     ['activities', 'Hoạt động lớp'], ['events', 'Sự kiện đặc biệt']
   ];
-  const publishedTitles = ["Đồng đội trên sân trường", "Sắc màu sân khấu", "Kỷ niệm cùng thầy cô", "Cùng nhau luyện tập", "Đội hình thể thao", "Những người đồng đội", "Tập thể 6B02", "Sân khấu tuổi học trò", "Ngày hội âm nhạc", "Cùng nhau đón hội", "Góc sáng tạo của chúng mình", "Sắc màu đèn hội", "Ngôi sao đêm hội", "Sân trường rực rỡ", "Dưới mái trường thân yêu", "Ghi nhận những nỗ lực · 01", "Ghi nhận những nỗ lực · 02", "Niềm vui được vinh danh", "Hoạt động giao lưu", "Trang lưu niệm", "Chúng mình dưới mái trường", "Một giờ học đáng nhớ", "Cùng nhau tiến bộ", "Thiệp tri ân thầy cô · 01", "Thiệp tri ân thầy cô · 02", "Thiệp tri ân thầy cô · 03", "Thiệp tri ân thầy cô · 04", "Thiệp tri ân thầy cô · 05", "Thiệp tri ân thầy cô · 06", "Thiệp tri ân thầy cô · 07", "Thiệp tri ân thầy cô · 08", "Thiệp tri ân thầy cô · 09", "Thiệp tri ân thầy cô · 10", "Thiệp tri ân thầy cô · 11"];
+  const publishedTitles = ["Đồng đội trên sân trường", "Sắc màu sân khấu", "Kỷ niệm cùng thầy cô", "Cùng nhau luyện tập", "Đội hình thể thao", "Những người đồng đội", "Tập thể 6B02", "Sân khấu tuổi học trò", "Ngày hội âm nhạc", "Cùng nhau đón hội", "Góc sáng tạo của chúng mình", "Sắc màu đèn hội", "Ngôi sao đêm hội", "Sân trường rực rỡ", "Dưới mái trường thân yêu", "Ghi nhận những nỗ lực · 01", "Ghi nhận những nỗ lực · 02", "Niềm vui được vinh danh", "Hoạt động giao lưu", "Chúng mình dưới mái trường", "Một giờ học đáng nhớ", "Cùng nhau tiến bộ"];
   const published = [
   "1cdjeb4FMlHBUvfLdMb5TZN_RGjeFbovU",
   "1m_MBccE5C4G0jEWhPcSBGbDtcC0k_AET",
@@ -37,21 +37,9 @@
   "1ri4URUs350DlThb8BhegRu1-ZnZ7xFLe",
   "19Y1DjiNM3ERw8jnDoWn6K_iBCHVuAU3F",
   "1d2eCow9k1EdL4-E6C9pU1tEtp8qv-mtP",
-  "1mkcjQTseD9F3-R6f64NAuy9dztrrztHG",
   "1jvkqWiVbNCMYioUEtvrp2CNjR7aghqWQ",
   "10Xwwvhde1OUnn2S7si0sOOoYLuT5HMqs",
-  "1RTGy9MQaWEqlPFs00EvrtS7TZ2hqMPSh",
-  "1aMEiiqiDTpQVLXp1InvPAh61mtkeTPEO",
-  "1z_5jAtpB7FHvcEQbl7eaTt4foOC1M8n0",
-  "1Y1hn_L9PERrUDMFSson16Tq8-aAXlaud",
-  "13xmiB5hYmzKv6xFeGr3iJp0M0OgN4sYK",
-  "10q_VkuhW0xhUQGCgShSB8f_hs7AEJQ4a",
-  "1WfkzZEqE2_wdjz0AIavQQ1sDGXrVVs6m",
-  "1ltgEr_y3mzShvvZ_IlxkTPYKyu-GyRd6",
-  "1MSSREiZyjMdqAnaU6hlWpHubXGEFOmFw",
-  "12zTjyvTC-vtm6wDZZ8Gnr450VQ9W7eN2",
-  "10mYX_3CNTDu5_oMu-jcV-cAq92ZWPBjK",
-  "1Rn70n6ToVmNByEQvI6K1e1KymGEOZpO2"
+  "1RTGy9MQaWEqlPFs00EvrtS7TZ2hqMPSh"
 ].map((id, index) => ({
     id: `published-${id}`, title: publishedTitles[index],
     src: `photos/diary/${id}.webp`, thumbnail: `photos/diary/${id}-thumb.webp`,
@@ -70,11 +58,7 @@
   "116Gh5eSSv74jlvOU5_YwL5jWf2Xo9c_T",
   "1notNxTxdzDAZfDSXRk2LxE4qcJ6unQEQ",
   "1L76QXqxkKX9deHDjMuR2qDWLQQxaSRPu",
-  "1eimw6ibQeK5WXdZak6CBr6oWtaizosXN",
-  "1ejheNfw09lcmaxg75yUxSipufxrAlYAs",
-  "1o5VbAverKlMhmKcv-Z0zJD1ZYzakvH-5",
-  "10fVSP7b8-Pl1h2JXXWvF_3t-FF7mMJSh",
-  "1hO5dAjJVyFmlo1chwMIvBPO8GTkiSNeS"
+  "1eimw6ibQeK5WXdZak6CBr6oWtaizosXN"
 ].map((id, index) => ({
     id: `published-video-${id}`, title: `Video kỷ niệm 6B02 · ${String(index + 1).padStart(2, '0')}`,
     src: `videos/diary/${id}${index >= 12 ? '-upright' : ''}.mp4`, thumbnail: `videos/diary/${id}${index >= 12 ? '-upright' : ''}-poster.webp`,
