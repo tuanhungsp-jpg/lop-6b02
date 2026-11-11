@@ -1,16 +1,165 @@
-/* Demo tributes, explicit device-local drafts, and an optional moderated public inbox. */
+/* Published class greeting cards and videos, local drafts, and an optional moderated inbox. */
 (() => {
   const $ = id => document.getElementById(id);
   if (!$('tributeEnvelopes')) return;
   const teacher = 'Cô Lâm Thị Nga', teachers = 'Các thầy cô Trường THCS Tam Thanh';
-  const demos = [
-    {author: 'Một học trò 6B02', recipient: teachers, caption: 'Cảm ơn vì đã luôn tin tưởng vào chúng em!', message: 'Cảm ơn thầy cô đã luôn đồng hành, kiên nhẫn và dạy chúng em không chỉ tri thức mà còn cả cách làm người. Chúng em chúc thầy cô thật nhiều sức khỏe, niềm vui và những ngày đến lớp luôn đầy ắp tiếng cười.'},
-    {author: 'Những trái tim nhỏ', recipient: teachers, caption: 'Những bài học không chỉ trong sách vở', message: 'Nhờ thầy cô, chúng em đã mạnh dạn hơn, tự tin hơn và biết ước mơ nhiều hơn. Những lời động viên giản dị của thầy cô là điều chúng em luôn ghi nhớ. Cảm ơn thầy cô vì những bài học tử tế mỗi ngày!'},
-    {author: 'Tập thể Chi đội 6B02', recipient: teachers, caption: 'Thầy cô là những người truyền cảm hứng', message: 'Thầy cô giống như những ngọn hải đăng, luôn soi sáng cho chúng em dù có những lúc chúng em vô tình làm thầy cô buồn. Ngày 20/11, chúng em xin gửi đến thầy cô một lời cảm ơn thật chân thành!'},
-    {author: 'Một lời cảm ơn nhỏ', recipient: teachers, caption: 'Cảm ơn vì sự kiên nhẫn và yêu thương', message: 'Nhân ngày Nhà giáo Việt Nam, chúng em kính chúc thầy cô luôn mạnh khỏe, hạnh phúc và luôn giữ được nụ cười dịu dàng trên môi. Mong rằng mỗi ngày tới trường đều là một ngày thật vui với thầy cô.'},
-    {author: 'Học trò của cô Nga', recipient: teacher, caption: 'Những kỷ niệm mãi trong tim', message: 'Cô Nga kính yêu! Cảm ơn cô vì đã lắng nghe những tâm sự nhỏ và giúp tập thể 6B02 thêm đoàn kết, tự tin, tỏa sáng. Chúng em sẽ cố gắng học tập và rèn luyện để cô luôn tự hào về chúng em. Chúc cô thật nhiều niềm vui!'},
-    {author: 'Ngôi nhà nhỏ 6B02', recipient: teachers, caption: 'Chúng em sẽ luôn cố gắng hơn nữa!', message: 'Mỗi trang vở hôm nay là một hạt mầm thầy cô vun trồng. Chúng em xin gửi ngàn lời biết ơn đến những người đã thắp sáng ước mơ của chúng em. Chúc thầy cô một ngày 20/11 thật ấm áp và nhiều yêu thương!'}
-  ].map((item, index) => ({...item, id: `tribute-demo-${index}`, demo: true}));
+  const published = [
+  {
+    "id": "tribute-1aMEiiqiDTpQVLXp1InvPAh61mtkeTPEO",
+    "type": "image",
+    "src": "photos/diary/1aMEiiqiDTpQVLXp1InvPAh61mtkeTPEO.webp",
+    "thumbnail": "photos/diary/1aMEiiqiDTpQVLXp1InvPAh61mtkeTPEO-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 01",
+    "message": ""
+  },
+  {
+    "id": "tribute-1z_5jAtpB7FHvcEQbl7eaTt4foOC1M8n0",
+    "type": "image",
+    "src": "photos/diary/1z_5jAtpB7FHvcEQbl7eaTt4foOC1M8n0.webp",
+    "thumbnail": "photos/diary/1z_5jAtpB7FHvcEQbl7eaTt4foOC1M8n0-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 02",
+    "message": ""
+  },
+  {
+    "id": "tribute-1Y1hn_L9PERrUDMFSson16Tq8-aAXlaud",
+    "type": "image",
+    "src": "photos/diary/1Y1hn_L9PERrUDMFSson16Tq8-aAXlaud.webp",
+    "thumbnail": "photos/diary/1Y1hn_L9PERrUDMFSson16Tq8-aAXlaud-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 03",
+    "message": ""
+  },
+  {
+    "id": "tribute-1ltgEr_y3mzShvvZ_IlxkTPYKyu-GyRd6",
+    "type": "image",
+    "src": "photos/diary/1ltgEr_y3mzShvvZ_IlxkTPYKyu-GyRd6.webp",
+    "thumbnail": "photos/diary/1ltgEr_y3mzShvvZ_IlxkTPYKyu-GyRd6-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 04",
+    "message": ""
+  },
+  {
+    "id": "tribute-1WfkzZEqE2_wdjz0AIavQQ1sDGXrVVs6m",
+    "type": "image",
+    "src": "photos/diary/1WfkzZEqE2_wdjz0AIavQQ1sDGXrVVs6m.webp",
+    "thumbnail": "photos/diary/1WfkzZEqE2_wdjz0AIavQQ1sDGXrVVs6m-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 05",
+    "message": ""
+  },
+  {
+    "id": "tribute-10q_VkuhW0xhUQGCgShSB8f_hs7AEJQ4a",
+    "type": "image",
+    "src": "photos/diary/10q_VkuhW0xhUQGCgShSB8f_hs7AEJQ4a.webp",
+    "thumbnail": "photos/diary/10q_VkuhW0xhUQGCgShSB8f_hs7AEJQ4a-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 06",
+    "message": ""
+  },
+  {
+    "id": "tribute-13xmiB5hYmzKv6xFeGr3iJp0M0OgN4sYK",
+    "type": "image",
+    "src": "photos/diary/13xmiB5hYmzKv6xFeGr3iJp0M0OgN4sYK.webp",
+    "thumbnail": "photos/diary/13xmiB5hYmzKv6xFeGr3iJp0M0OgN4sYK-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 07",
+    "message": ""
+  },
+  {
+    "id": "tribute-1MSSREiZyjMdqAnaU6hlWpHubXGEFOmFw",
+    "type": "image",
+    "src": "photos/diary/1MSSREiZyjMdqAnaU6hlWpHubXGEFOmFw.webp",
+    "thumbnail": "photos/diary/1MSSREiZyjMdqAnaU6hlWpHubXGEFOmFw-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 08",
+    "message": ""
+  },
+  {
+    "id": "tribute-12zTjyvTC-vtm6wDZZ8Gnr450VQ9W7eN2",
+    "type": "image",
+    "src": "photos/diary/12zTjyvTC-vtm6wDZZ8Gnr450VQ9W7eN2.webp",
+    "thumbnail": "photos/diary/12zTjyvTC-vtm6wDZZ8Gnr450VQ9W7eN2-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 09",
+    "message": ""
+  },
+  {
+    "id": "tribute-1Rn70n6ToVmNByEQvI6K1e1KymGEOZpO2",
+    "type": "image",
+    "src": "photos/diary/1Rn70n6ToVmNByEQvI6K1e1KymGEOZpO2.webp",
+    "thumbnail": "photos/diary/1Rn70n6ToVmNByEQvI6K1e1KymGEOZpO2-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 10",
+    "message": ""
+  },
+  {
+    "id": "tribute-10mYX_3CNTDu5_oMu-jcV-cAq92ZWPBjK",
+    "type": "image",
+    "src": "photos/diary/10mYX_3CNTDu5_oMu-jcV-cAq92ZWPBjK.webp",
+    "thumbnail": "photos/diary/10mYX_3CNTDu5_oMu-jcV-cAq92ZWPBjK-thumb.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Thiệp tri ân · 11",
+    "message": ""
+  },
+  {
+    "id": "tribute-1ejheNfw09lcmaxg75yUxSipufxrAlYAs",
+    "type": "video",
+    "src": "videos/diary/1ejheNfw09lcmaxg75yUxSipufxrAlYAs-upright.mp4",
+    "thumbnail": "videos/diary/1ejheNfw09lcmaxg75yUxSipufxrAlYAs-upright-poster.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Video chúc mừng · 01",
+    "message": ""
+  },
+  {
+    "id": "tribute-1o5VbAverKlMhmKcv-Z0zJD1ZYzakvH-5",
+    "type": "video",
+    "src": "videos/diary/1o5VbAverKlMhmKcv-Z0zJD1ZYzakvH-5-upright.mp4",
+    "thumbnail": "videos/diary/1o5VbAverKlMhmKcv-Z0zJD1ZYzakvH-5-upright-poster.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Video chúc mừng · 02",
+    "message": ""
+  },
+  {
+    "id": "tribute-10fVSP7b8-Pl1h2JXXWvF_3t-FF7mMJSh",
+    "type": "video",
+    "src": "videos/diary/10fVSP7b8-Pl1h2JXXWvF_3t-FF7mMJSh-upright.mp4",
+    "thumbnail": "videos/diary/10fVSP7b8-Pl1h2JXXWvF_3t-FF7mMJSh-upright-poster.webp",
+    "published": true,
+    "author": "Lớp 6B02",
+    "recipient": "Các thầy cô Trường THCS Tam Thanh",
+    "caption": "Video chúc mừng · 03",
+    "message": ""
+  }
+];
+  let mediaIndex = 0;
   const compose = $('tributeCompose'), letter = $('tributeLetter'), form = $('tributeForm');
   const author = $('tributeAuthor'), recipient = $('tributeRecipient'), other = $('tributeOtherTeacherName'), message = $('tributeMessage');
   const status = $('tributeStatus'), submit = $('tributeSubmit');
@@ -46,6 +195,11 @@
     return true;
   }
   function openLetter(item, badge = item.demo ? 'LỜI CHÚC DEMO' : 'LỜI CHÚC ĐÃ DUYỆT') {
+    $('tributeLetterMedia').querySelector('video')?.pause();
+    $('tributeLetterMedia').replaceChildren();
+    $('tributeLetterMedia').hidden = true; $('tributeMediaNav').hidden = true;
+    letter.classList.remove('has-published-media');
+    ['tributeLetterRecipient', 'tributeLetterMessage', 'tributeLetterAuthor'].forEach(id => $(id).hidden = false);
     $('tributeLetterBadge').textContent = badge;
     $('tributeLetterRecipient').textContent = `Kính gửi ${item.recipient}`;
     $('tributeLetterTitle').textContent = 'Một lời chúc từ trái tim';
@@ -53,23 +207,41 @@
     $('tributeLetterAuthor').textContent = `Thương mến, ${item.author}`;
     if (!letter.open) letter.showModal();
   }
-  function publicItems() {const items = [...approved]; while (items.length < 6) items.push(demos[items.length]); return items.slice(0, 6);}
+  function openPublished(item) {
+    mediaIndex = published.findIndex(value => value.id === item.id);
+    const host = $('tributeLetterMedia');
+    host.querySelector('video')?.pause(); host.replaceChildren();
+    letter.classList.add('has-published-media');
+    ['tributeLetterRecipient', 'tributeLetterMessage', 'tributeLetterAuthor'].forEach(id => $(id).hidden = true);
+    host.hidden = false; $('tributeMediaNav').hidden = false;
+    $('tributeLetterBadge').textContent = item.type === 'video' ? 'VIDEO CHÚC MỪNG 20/11' : 'THIỆP TRI ÂN 20/11';
+    $('tributeLetterTitle').textContent = item.caption;
+    const media = element(item.type === 'video' ? 'video' : 'img');
+    media.src = item.src;
+    if (item.type === 'video') {media.controls = true; media.playsInline = true; media.preload = 'metadata'; media.poster = item.thumbnail;}
+    else media.alt = item.caption + ' gửi thầy cô';
+    media.addEventListener('error', () => { $('tributeMediaCount').textContent = 'Chưa tải được nội dung. Anh/chị thử mở lại phong thư nhé.'; });
+    host.appendChild(media);
+    $('tributeMediaCount').textContent = `${mediaIndex + 1} / ${published.length}`;
+    if (!letter.open) letter.showModal();
+  }
+  function readItem(item) {if (item.published) openPublished(item); else openLetter(item);}
+  function publicItems() {return [...published, ...approved];}
   function renderWall() {
     $('tributeEnvelopes').replaceChildren(...publicItems().map((item, index) => {
       const button = element('button', 'tribute-envelope'); button.type = 'button';
-      button.setAttribute('aria-label', `Mở bức thư ${index + 1}${item.demo ? ' minh họa' : ''}`);
-      const art = element('span', 'tribute-envelope-art'); art.setAttribute('aria-hidden', 'true'); art.style.backgroundPosition = `${(index % 3) * 50}% ${Math.floor(index / 3) * 100}%`;
+      button.setAttribute('aria-label', item.published ? `Mở ${item.caption}` : `Mở bức thư ${index + 1}`);
+      const art = element('span', 'tribute-envelope-art'); art.setAttribute('aria-hidden', 'true'); art.style.backgroundPosition = `${(index % 3) * 50}% ${Math.floor((index % 6) / 3) * 100}%`;
       button.append(art, element('span', 'tribute-envelope-label', `Bức thư ${String(index + 1).padStart(2, '0')}`), element('span', 'tribute-envelope-caption', item.caption || `Lời chúc gửi ${item.recipient}`));
-      button.addEventListener('click', () => openLetter(item)); return button;
+      button.addEventListener('click', () => readItem(item)); return button;
     }));
-    $('tributeFeatured').replaceChildren(...publicItems().slice(0, 4).map(item => {
-      const button = element('button', 'tribute-feature-card'); button.type = 'button'; button.setAttribute('aria-label', `Đọc lời chúc của ${item.author}`);
-      button.append(element('span', 'tribute-feature-message', item.message), element('span', 'tribute-feature-author', item.author), element('small', 'tribute-demo-tag', item.demo ? 'Lời chúc demo · 6B02' : 'Đã được duyệt'));
-      button.addEventListener('click', () => openLetter(item)); return button;
+    $('tributeFeatured').replaceChildren(...[...published.filter(item => item.type === 'video'), ...published.filter(item => item.type === 'image'), ...approved].slice(0, 4).map(item => {
+      const button = element('button', 'tribute-feature-card'); button.type = 'button'; button.setAttribute('aria-label', item.published ? `Xem ${item.caption}` : `Đọc lời chúc của ${item.author}`);
+      if (item.published) {const preview = element('img', 'tribute-feature-preview'); preview.src = item.thumbnail; preview.alt = item.caption; preview.loading = 'lazy'; button.append(preview);}
+      button.append(element('span', 'tribute-feature-message', item.published ? item.caption : item.message), element('span', 'tribute-feature-author', item.author), element('small', 'tribute-demo-tag', item.published ? (item.type === 'video' ? 'Bấm để xem video' : 'Bấm để mở thiệp') : 'Đã được duyệt'));
+      button.addEventListener('click', () => readItem(item)); return button;
     }));
-    $('tributeModeNote').textContent = connected
-      ? `${approved.length} lời chúc đã duyệt trong hộp thư chung. Các phong thư có nhãn demo dùng để minh họa khi chưa đủ nội dung.`
-      : '6 lời chúc demo · Các con có thể viết, xem trước và lưu thư nháp. Thư nháp chưa được gửi đến các cô.';
+    $('tributeModeNote').textContent = '11 thiệp và 3 video chúc mừng 20/11 của lớp 6B02 · Bấm vào phong thư để mở.';
     $('tributeFormNote').textContent = connected
       ? 'Lời chúc được gửi vào hộp thư chung và chờ người quản lý duyệt trước khi xuất hiện công khai. Thư chưa được gửi qua email cho cô.'
       : 'Em có thể viết, xem trước và lưu thư nháp trên trình duyệt này để mở lại và viết tiếp. Thư nháp chưa được gửi đến cô hoặc đăng công khai.';
@@ -132,7 +304,7 @@
         return {id: `approved-${index}`, author: row.author, recipient: match ? match[1] : teachers, message: match ? row.message.slice(match[0].length) : row.message, demo: false};
       });
       renderWall(); $('tributeLoadStatus').textContent = '';
-    } catch (_) {$('tributeLoadStatus').textContent = 'Chưa tải được lời chúc đã duyệt. Các phong thư demo vẫn có thể xem được.';}
+    } catch (_) {$('tributeLoadStatus').textContent = 'Chưa tải được lời chúc đã duyệt. Thiệp và video của lớp vẫn có thể xem được.';}
   }
   document.querySelectorAll('.tribute-compose-button').forEach(button => button.addEventListener('click', () => openCompose(button.dataset.tributeRecipient || 'teacher')));
   $('tributeComposeClose').addEventListener('click', () => compose.close()); $('tributeLetterClose').addEventListener('click', () => letter.close());
@@ -165,6 +337,13 @@
       let saved = false; try {storeDraft(value); saved = true;} catch (_) {}
       setStatus(saved ? 'Chưa gửi được đến hộp thư chung. Đã giữ lại thư nháp trên trình duyệt này để em thử gửi lại.' : 'Chưa gửi được và chưa lưu được thư nháp. Em hãy sao chép lời chúc để giữ lại nhé.', 'error');
     } finally {sending = false; updateForm();}
+  });
+  $('tributeMediaPrev').addEventListener('click', () => openPublished(published[(mediaIndex - 1 + published.length) % published.length]));
+  $('tributeMediaNext').addEventListener('click', () => openPublished(published[(mediaIndex + 1) % published.length]));
+  letter.addEventListener('close', () => { $('tributeLetterMedia').querySelector('video')?.pause(); $('tributeLetterMedia').replaceChildren(); });
+  letter.addEventListener('keydown', event => {
+    if (!letter.classList.contains('has-published-media') || ['VIDEO','INPUT','TEXTAREA'].includes(event.target.tagName)) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {event.preventDefault(); $(event.key === 'ArrowRight' ? 'tributeMediaNext' : 'tributeMediaPrev').click();}
   });
   renderWall(); renderDrafts(); updateForm(); loadPublic();
 })();
