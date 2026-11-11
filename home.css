@@ -66,3 +66,37 @@
 @media(max-width:800px){.welcome-hero{padding-bottom:35px}.welcome-stage{height:555px}.welcome-scenery{inset:0;background-position:center top}.welcome-quicklinks{bottom:0}.welcome-title-group{padding-top:28px}}
 @media(max-width:600px){.welcome-stage{height:575px}.welcome-title-group{padding-top:27px}.welcome-quicklinks{bottom:0}.welcome-scenery{background-position:51% top;background-size:auto 100%}.welcome-title-display{font-size:140px}.welcome-plane{display:none}}
 @media(max-width:360px){.welcome-stage{height:570px}.welcome-title-display{font-size:112px}}
+
+/* A class scrapbook: real school scenery, teacher portrait and classroom memory. */
+.welcome-hero{background:#fff4d8;padding-bottom:52px}
+.welcome-scenery{inset:0 0 52px;background:linear-gradient(90deg,#e9f5e98c 0%,#d8f3f0a6 23%,#def4f28c 42%,transparent 66%),url('truong-2.webp') center 56%/cover no-repeat}
+.welcome-scenery:before,.welcome-scenery:after{content:'';position:absolute;inset:0;background:url('assets/home/welcome-scene.webp') center/100% 100% no-repeat}
+.welcome-scenery:before{mask-image:linear-gradient(90deg,#000 0%,#000 19%,transparent 39%)}
+.welcome-scenery:after{mask-image:linear-gradient(310deg,#000 0%,#000 10%,transparent 24%)}
+.welcome-stage{aspect-ratio:1672/650;min-height:540px;padding-top:0}
+.welcome-title-group{position:absolute;left:27%;top:8%;width:31%;max-width:none;margin:0;padding:0;text-align:center}
+.welcome-title-script{font-size:clamp(52px,5.3vw,91px);-webkit-text-stroke:5px #fff;paint-order:stroke fill;filter:drop-shadow(1px 3px 0 #17638455)}
+.welcome-title-display{font-family:YearbookTitle,cursive;font-weight:700;font-size:clamp(118px,12vw,205px);font-style:italic;letter-spacing:-.04em;line-height:1.05;-webkit-text-stroke:7px #fff;paint-order:stroke fill;margin-top:4px}
+.welcome-title-display:before{left:-3%;right:-3%;top:17%;bottom:3%;background:#ffe67f}
+.welcome-motto{font-size:clamp(13px,1.35vw,23px);line-height:1.5;letter-spacing:0;padding:9px 18px 12px;white-space:nowrap;margin-top:8px}
+.welcome-school{display:inline-block;background:#fffef5;border-radius:40px;padding:9px 17px;margin-top:18px;font:700 clamp(10px,1vw,16px)/1.5 ClassBody,sans-serif;letter-spacing:0;color:#164d77;box-shadow:0 2px 5px #345a4520}
+.welcome-school>span{font-size:20px;color:#65a51d}
+.welcome-title-heart{left:-8%;right:auto;top:80px;color:#ff7199;font-size:66px;text-shadow:2px 2px #fff}
+.welcome-sun{right:3%;top:-12px;color:#ffd754;filter:drop-shadow(2px 2px white)}
+.welcome-plane{left:25%;top:64%;width:77px;height:67px;z-index:4}
+.welcome-reference-photo{position:absolute;z-index:3;margin:0;background:#fffefa;padding:10px 10px 13px;box-shadow:0 8px 20px #37553735;border:1px solid #ebe3ca}
+.welcome-reference-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.welcome-reference-photo figcaption{text-align:center;font:600 clamp(14px,1.3vw,22px)/1.1 YearbookHand,cursive;color:#174b70;padding:9px 0 0}
+.welcome-reference-photo figcaption span{color:#f16a7b;font-size:1.3em}
+.welcome-reference-teacher{left:3.2%;top:6%;width:21%;transform:rotate(-8deg)}
+.welcome-reference-class{left:10%;top:51%;width:16%;transform:rotate(7deg)}
+.welcome-quicklinks{bottom:-28px;width:calc(100% - 110px);max-width:1500px;gap:16px}
+.welcome-quicklink{border-width:3px;border-radius:25px;box-shadow:0 6px 13px #6f673d18,inset 0 0 0 3px #ffffff65;min-height:90px}
+.welcome-quick-copy strong{font-size:17px}.welcome-quick-copy small{font-size:13px}
+@media(max-width:1199px){.welcome-stage{height:510px;min-height:0;aspect-ratio:auto}.welcome-title-group{left:28%;top:10%;width:36%;padding:0}.welcome-title-script{font-size:61px}.welcome-title-display{font-size:145px}.welcome-motto{font-size:16px}.welcome-school{font-size:11px;padding-inline:12px}.welcome-reference-teacher{width:23%;left:2%;top:7%}.welcome-reference-class{width:19%;left:7%;top:53%}.welcome-quicklinks{width:calc(100% - 40px);bottom:-28px;gap:10px}.welcome-quick-copy strong{font-size:14px}.welcome-quick-copy small{font-size:11px}.welcome-quicklink{padding:10px;min-height:80px}}
+@media(max-width:800px){.welcome-hero{padding-bottom:24px}.welcome-scenery{inset:0;background-position:65% center}.welcome-scenery:before,.welcome-scenery:after{display:none}.welcome-stage{display:flex;flex-direction:column;gap:24px;height:auto;min-height:0;padding:26px 20px 0}.welcome-title-group{position:relative;inset:auto;width:100%;max-width:none;padding:0;order:0}.welcome-title-script{font-size:64px}.welcome-title-display{font-size:155px}.welcome-motto{font-size:18px}.welcome-school{font-size:12px;margin-top:14px}.welcome-title-heart{left:8%;top:80px}.welcome-sun{right:15%;top:0}.welcome-reference-photos{order:1;display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:580px;width:100%;margin:0 auto;padding:0 4px}.welcome-reference-photo{position:relative;inset:auto;width:auto;padding:7px 7px 10px}.welcome-reference-photo figcaption{font-size:19px}.welcome-reference-teacher{transform:rotate(-3deg)}.welcome-reference-class{transform:rotate(3deg)}.welcome-quicklinks{order:2;position:relative;inset:auto;transform:none;width:100%;max-width:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.welcome-quick-copy strong{font-size:14px}.welcome-quick-copy small{font-size:11px}.welcome-quicklink{min-height:80px;padding:10px}.welcome-plane{display:none}}
+@media(max-width:430px){.welcome-stage{padding:22px 12px 0;gap:22px}.welcome-title-script{font-size:56px}.welcome-title-display{font-size:137px;-webkit-text-stroke-width:5px}.welcome-motto{font-size:15px}.welcome-school{font-size:11px}.welcome-reference-photos{gap:12px}.welcome-reference-photo figcaption{font-size:16px}.welcome-quick-copy strong{font-size:12px}.welcome-quick-copy small{font-size:10px}.welcome-quick-icon{width:34px;height:34px}.welcome-title-heart{left:4%;font-size:52px}.welcome-sun{right:9%;width:40px}.welcome-quicklink{gap:7px;padding:9px 7px}}
+.welcome-reference-photo img{height:auto}
+.welcome-scenery:after{clip-path:polygon(80% 66%,100% 66%,100% 100%,80% 100%);mask-image:linear-gradient(135deg,transparent 62%,#000 84%)}
+@media(min-width:1200px){.welcome-stage{aspect-ratio:1672/700;min-height:560px}.welcome-reference-teacher{top:4%;width:20.5%}.welcome-reference-class{top:51.5%;left:10.5%;width:14.3%}}
+.welcome-scenery:after{clip-path:none;mask-image:radial-gradient(ellipse 22% 32% at 100% 100%,#000 60%,transparent 100%)}
