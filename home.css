@@ -69,9 +69,9 @@
 
 /* A class scrapbook: real school scenery, teacher portrait and classroom memory. */
 .welcome-hero{background:#fff4d8;padding-bottom:52px}
-.welcome-scenery{inset:0 0 52px;background:linear-gradient(90deg,#e9f5e98c 0%,#d8f3f0a6 23%,#def4f28c 42%,transparent 66%),url('truong-2.webp') center 56%/cover no-repeat}
+.welcome-scenery{inset:0 0 52px;background:linear-gradient(90deg,#f4faf21f 0%,#edf8f22b 30%,#edf8f214 43%,transparent 56%),url('truong-2.webp') center 56%/cover no-repeat}
 .welcome-scenery:before,.welcome-scenery:after{content:'';position:absolute;inset:0;background:url('assets/home/welcome-scene.webp') center/100% 100% no-repeat}
-.welcome-scenery:before{mask-image:linear-gradient(90deg,#000 0%,#000 19%,transparent 39%)}
+.welcome-scenery:before{mask-image:linear-gradient(90deg,#000 0%,#000 17%,transparent 32%)}
 .welcome-scenery:after{mask-image:linear-gradient(310deg,#000 0%,#000 10%,transparent 24%)}
 .welcome-stage{aspect-ratio:1672/650;min-height:540px;padding-top:0}
 .welcome-title-group{position:absolute;left:27%;top:8%;width:31%;max-width:none;margin:0;padding:0;text-align:center}
@@ -106,3 +106,6 @@
 @media(max-width:1199px){.welcome-reference-photo figcaption{font-size:12px;line-height:1.6}}
 @media(max-width:800px){.welcome-reference-photo figcaption{font-size:13px;line-height:1.6}}
 @media(max-width:430px){.welcome-reference-photo figcaption{font-size:11px;line-height:1.6;padding-inline:0}}
+
+/* Keep the real school photograph crisp instead of whitening it under a veil. */
+.welcome-scenery{filter:contrast(1.06) saturate(1.04)}
