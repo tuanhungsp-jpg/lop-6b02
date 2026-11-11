@@ -100,3 +100,9 @@
 .welcome-scenery:after{clip-path:polygon(80% 66%,100% 66%,100% 100%,80% 100%);mask-image:linear-gradient(135deg,transparent 62%,#000 84%)}
 @media(min-width:1200px){.welcome-stage{aspect-ratio:1672/700;min-height:560px}.welcome-reference-teacher{top:4%;width:20.5%}.welcome-reference-class{top:51.5%;left:10.5%;width:14.3%}}
 .welcome-scenery:after{clip-path:none;mask-image:radial-gradient(ellipse 22% 32% at 100% 100%,#000 60%,transparent 100%)}
+/* Clear Vietnamese captions on the class cover photographs. */
+.welcome-reference-photo figcaption{font:600 clamp(12px,1vw,16px)/1.65 ClassBody,'Be Vietnam Pro',sans-serif;padding:10px 4px 2px;letter-spacing:normal}
+.welcome-reference-photo figcaption span{font-family:Arial,sans-serif;font-size:19px;vertical-align:middle}
+@media(max-width:1199px){.welcome-reference-photo figcaption{font-size:12px;line-height:1.6}}
+@media(max-width:800px){.welcome-reference-photo figcaption{font-size:13px;line-height:1.6}}
+@media(max-width:430px){.welcome-reference-photo figcaption{font-size:11px;line-height:1.6;padding-inline:0}}
