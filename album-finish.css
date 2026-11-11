@@ -133,3 +133,21 @@
 #gioithieu .yb-book[data-reduced-motion=true] .stf__block{pointer-events:none}
 #gioithieu .yb-book:not([data-reduced-motion=true]) .stf__item{cursor:grab}
 #gioithieu .yb-album-cover.is-turning .stf__item{cursor:grabbing}
+
+/* The outer cover fits the viewport; page-turn geometry uses fixed coordinates. */
+#gioithieu .yb-album-cover{box-sizing:content-box;margin-inline:auto;max-width:none}
+#gioithieu .yb-album-cover .yb-book{margin:0;transform:scale(var(--yb-scale,1));transform-origin:top left;max-width:none}
+#gioithieu .yb-album-cover .stf__wrapper{position:relative;width:100%;height:100%;padding-bottom:0!important}
+#gioithieu .yb-sidebar{min-height:0;margin-top:0;max-height:calc(var(--yb-visible-height,640px) + 32px)}
+#gioithieu .yb-roster{min-height:0;flex:1;max-height:none}
+#gioithieu .yb-sidebar-foot{padding-top:12px}
+#gioithieu .yb-controls{gap:12px;flex-wrap:wrap}
+#gioithieu .yb-motion{font:600 12px/1.5 var(--yb-body);color:#2c5b69;border:1px solid #cfbc93;background:#fff9e9;border-radius:18px;padding:8px 12px;min-height:38px}
+#gioithieu .yb-profile-details{max-height:calc(100% - 205px);overflow-y:auto;overscroll-behavior:contain;padding-right:4px}
+#gioithieu .yb-message{flex-shrink:0}
+@media(min-width:900px){#gioithieu .yb-title-block{margin-bottom:18px}#gioithieu .yb-book-shell{max-width:none}}
+@media(max-width:899px){#gioithieu .yb-experience{display:flex;flex-direction:column}#gioithieu .yb-stage{order:1;width:100%}#gioithieu .yb-sidebar{order:2;width:100%;max-height:280px}#gioithieu .yb-roster{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:auto}#gioithieu .yb-title-block{padding-left:0}#gioithieu .yb-controls{justify-content:center}#gioithieu .yb-autoplay{position:static}#gioithieu .yb-sidebar-foot{display:none}}
+
+#gioithieu .yb-album-cover .yb-sticky-note{top:170px;width:90px;font-size:20px;line-height:1.15}
+
+@media(min-width:900px){#gioithieu.yearbook-v2{padding-top:24px!important}#gioithieu .yb-title-block h2{font-size:clamp(46px,4.5vw,68px)!important}#gioithieu .yb-title-block p{font-size:12px;margin-top:5px}#gioithieu .yb-eyebrow{font-size:11px}}

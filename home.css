@@ -1,5 +1,4 @@
 @font-face{font-family:WelcomeBrush;src:url('assets/home/title-brush.ttf') format('truetype');font-display:swap;font-weight:400}
-@font-face{font-family:WelcomeBrush;src:url('assets/home/title-brush.ttf') format('truetype');font-display:swap;font-weight:400}
 /* A bright school scrapbook welcome. Shared site fonts stay unchanged. */
 .site-header,.welcome-hero{--welcome-ink:#153f59;--welcome-blue:#146489;--welcome-gold:#ffdf6c;font-family:ClassBody,'Be Vietnam Pro',sans-serif;color:var(--welcome-ink)}
 .home-shell{width:calc(100% - 80px);max-width:1510px;margin-inline:auto}
@@ -67,53 +66,3 @@
 @media(max-width:800px){.welcome-hero{padding-bottom:35px}.welcome-stage{height:555px}.welcome-scenery{inset:0;background-position:center top}.welcome-quicklinks{bottom:0}.welcome-title-group{padding-top:28px}}
 @media(max-width:600px){.welcome-stage{height:575px}.welcome-title-group{padding-top:27px}.welcome-quicklinks{bottom:0}.welcome-scenery{background-position:51% top;background-size:auto 100%}.welcome-title-display{font-size:140px}.welcome-plane{display:none}}
 @media(max-width:360px){.welcome-stage{height:570px}.welcome-title-display{font-size:112px}}
-
-
-/* A school photograph leads the cover, with a clear title and two supporting views. */
-.welcome-hero{background:#f5f8f7;padding:0 0 28px}
-.welcome-scenery{inset:0 0 100px;background:linear-gradient(90deg,#103b50 0%,#103b50ef 30%,#103b5099 52%,#103b5010 80%),url('assets/home/school/courtyard.webp') center 63%/cover no-repeat}
-.welcome-hero:after{display:none}
-.welcome-stage{display:grid;grid-template-columns:1.05fr 1fr;gap:34px 48px;max-width:1440px;padding:52px 48px 0;min-height:0;height:auto;aspect-ratio:auto}
-.welcome-title-group{grid-column:1;grid-row:1;width:100%;max-width:610px;margin:0;padding:0;text-align:left;align-self:center}
-.welcome-cover-eyebrow{font:600 12px/1.6 ClassBody,sans-serif;letter-spacing:.18em;color:#bce1dc;margin:0 0 18px}
-.welcome-title-group h1{color:white}
-.welcome-title-script{font:600 clamp(34px,3.5vw,52px)/1.25 ClassDisplay,sans-serif;transform:none;text-shadow:none;letter-spacing:-.02em}
-.welcome-title-display{font:700 clamp(96px,10vw,150px)/1 ClassDisplay,sans-serif;color:#ffdf84;transform:none;letter-spacing:-.035em;-webkit-text-stroke:0;filter:none;padding:0;margin:0 0 16px;width:auto;max-width:none}
-.welcome-title-display:before{display:none}
-.welcome-motto{font:600 clamp(13px,1.1vw,16px)/1.6 ClassBody,sans-serif;color:#fff;padding:0;background:none;transform:none;clip-path:none;letter-spacing:.08em;box-shadow:none}
-.welcome-school{font:400 13px/1.7 ClassBody,sans-serif;letter-spacing:.1em;color:#d7e8eb;text-shadow:none;margin:12px 0 0}
-.welcome-school>span{display:none}
-.welcome-cover-intro{font:400 15px/1.8 ClassBody,sans-serif;color:#d9e8eb;max-width:390px;margin:20px 0 0}
-.welcome-title-heart,.welcome-sun,.welcome-plane{display:none}
-.welcome-school-gallery{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-self:end;margin-top:210px;min-width:0}
-.welcome-school-photo{position:relative;inset:auto;z-index:2;margin:0;padding:6px;background:#fff;border:1px solid #ffffff90;box-shadow:0 12px 30px #08263830;width:auto;transform:none;border-radius:14px;overflow:hidden}
-.welcome-school-photo:before{display:none}
-.welcome-school-photo img,.welcome-school-gate img{display:block;width:100%;height:142px;aspect-ratio:auto;object-fit:cover;border-radius:9px;background:#e5eeec}
-.welcome-school-gate img{object-position:center 36%}
-.welcome-school-photo figcaption{font:600 11px/1.6 ClassBody,sans-serif;text-align:left;color:#36576a;padding:7px 7px 4px}
-.welcome-school-ceremony{display:none}
-.welcome-quicklinks{grid-column:1/-1;grid-row:2;position:relative;inset:auto;transform:none;width:100%;max-width:none;gap:14px;margin:0}
-.welcome-quicklink{background:#fff;min-height:88px;border:1px solid #e4edeb;border-radius:16px;box-shadow:0 5px 18px #123b4d08;padding:15px;backdrop-filter:none}
-.welcome-quick-icon{background:color-mix(in srgb,var(--quick-color) 9%,white)}
-.welcome-quick-copy strong{font-size:14px}.welcome-quick-copy small{font-size:11px}
-.welcome-quick-arrow{background:#f2f6f5;border:0;width:25px;height:25px;font-size:24px}
-@media(max-width:1199px){.welcome-stage{padding:40px 28px 0;gap:28px}.welcome-title-group{padding:0;width:100%}.welcome-title-script{font-size:40px}.welcome-title-display{font-size:112px}.welcome-motto{font-size:13px;letter-spacing:.04em}.welcome-school-gallery{margin-top:180px;gap:10px}.welcome-school-photo img{height:126px}.welcome-quicklinks{gap:10px}.welcome-quicklink{padding:12px;gap:9px}.welcome-quick-copy strong{font-size:13px}.welcome-quick-arrow{display:none}}
-@media(max-width:800px){.welcome-scenery{inset:0 0 194px;background-image:linear-gradient(90deg,#103b50f0,#103b509c),url('assets/home/school/courtyard.webp')}.welcome-stage{grid-template-columns:1fr;gap:26px;padding:36px 24px 0}.welcome-title-group{grid-column:1;grid-row:1;max-width:none;text-align:left}.welcome-title-script{font-size:37px}.welcome-title-display{font-size:116px}.welcome-school-gallery{grid-column:1;grid-row:2;margin:0;max-width:550px;width:100%;gap:12px}.welcome-school-photo img{height:158px}.welcome-quicklinks{grid-column:1;grid-row:3;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.welcome-quick-copy strong{font-size:14px}.welcome-quick-copy small{font-size:11px}.welcome-cover-intro{margin-top:16px;font-size:14px;max-width:430px}.welcome-cover-eyebrow{font-size:11px;margin-bottom:12px}.welcome-quicklink{min-height:80px;border-radius:13px}.welcome-school{font-size:11px}}
-@media(max-width:430px){.welcome-stage{padding:28px 16px 0;gap:22px}.welcome-title-script{font-size:33px}.welcome-title-display{font-size:104px;margin-bottom:12px}.welcome-motto{font-size:12px;letter-spacing:.03em}.welcome-school-gallery{gap:10px}.welcome-school-photo img{height:126px}.welcome-school-photo figcaption{font-size:10px;padding-inline:3px}.welcome-quicklink{padding:12px 9px;gap:8px}.welcome-quick-icon{width:34px;height:34px}.welcome-quick-copy strong{font-size:12px}.welcome-quick-copy small{font-size:10px}.welcome-scenery{inset:0 0 190px}}
-
-/* Supporting photographs sit below the cover, outside its scenery. */
-.welcome-cover-main{position:relative;isolation:isolate;background:#103b50}
-.welcome-scenery{inset:0}
-.welcome-cover-main .welcome-title-group{width:calc(100% - 96px);max-width:1344px;padding:44px 0 48px;margin:0 auto}
-.welcome-stage{display:flex;flex-direction:column;gap:20px;padding:24px 48px 0}
-.welcome-school-gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:none;margin:0;align-self:stretch}
-.welcome-school-photo{display:grid;grid-template-columns:160px minmax(0,1fr);align-items:center;gap:20px;padding:8px;border:1px solid #e0e9e6;border-radius:14px;box-shadow:none;background:#fff}
-.welcome-school-photo img,.welcome-school-gate img{width:160px;height:106px;object-fit:contain;background:#edf2ef;border-radius:8px}
-.welcome-school-photo figcaption{padding:8px 12px 8px 0;text-align:left}
-.welcome-school-photo figcaption strong{display:block;font:600 16px/1.6 ClassBody,sans-serif;color:#214b60}
-.welcome-school-photo figcaption small{display:block;font:400 12px/1.7 ClassBody,sans-serif;color:#728590;margin-top:4px}
-.welcome-school-ceremony{display:none}
-.welcome-quicklinks{width:100%;margin:0}
-@media(max-width:1199px){.welcome-cover-main .welcome-title-group{width:calc(100% - 56px);padding:40px 0}.welcome-stage{padding:22px 28px 0}.welcome-school-photo{grid-template-columns:140px minmax(0,1fr);gap:14px}.welcome-school-photo img,.welcome-school-gate img{width:140px;height:100px}.welcome-school-photo figcaption strong{font-size:14px}}
-@media(max-width:800px){.welcome-cover-main .welcome-title-group{width:calc(100% - 48px);padding:32px 0 36px}.welcome-stage{padding:20px 24px 0;gap:18px}.welcome-school-gallery{gap:12px}.welcome-school-photo{display:block;padding:7px}.welcome-school-photo img,.welcome-school-gate img{width:100%;height:140px}.welcome-school-photo figcaption{padding:10px 6px 6px}.welcome-school-photo figcaption strong{font-size:13px}.welcome-school-photo figcaption small{font-size:11px}.welcome-scenery{inset:0}}
-@media(max-width:430px){.welcome-cover-main .welcome-title-group{width:calc(100% - 32px);padding:28px 0 30px}.welcome-stage{padding:16px 16px 0;gap:16px}.welcome-school-gallery{gap:10px}.welcome-school-photo img,.welcome-school-gate img{height:116px}.welcome-school-photo figcaption strong{font-size:11px}.welcome-school-photo figcaption small{font-size:10px}.welcome-school-photo figcaption{padding:8px 3px 4px}.welcome-scenery{inset:0}}

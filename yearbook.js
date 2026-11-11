@@ -4,7 +4,8 @@
   const book = $('ybBook'), roster = $('ybRoster'), thumbs = $('ybThumbs');
   if (!book || !roster || !thumbs) return;
   const cover = book.parentElement;
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let animated = true;
+  try {animated = localStorage.getItem('6b02-yearbook-animation') !== 'off';} catch (_) {}
   // Hồ sơ từ biểu mẫu lớp, cập nhật ngày 10-11-2026; mỗi bạn dùng lần gửi mới nhất.
   // Giữ tháng sinh theo cách hiển thị hiện tại của website.
   const members = [
@@ -252,6 +253,12 @@
     "photo": "photos/members/1Fo5P7h5-_0At17_X3C2Ebg_q-FBi6V4v.webp"
   }
 ];
+  const leaderIndex = members.findIndex(member => member.name === 'Trần Khánh Huyền');
+  if (leaderIndex >= 0) {
+    const [leader] = members.splice(leaderIndex, 1);
+    leader.role = 'Lớp trưởng'; members.unshift(leader);
+  }
+  members.forEach((member, index) => {member.id = index + 1;});
   const photoSrc = member => member.photo || 'anh-lop-6b02.jpg';
   const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -279,7 +286,7 @@
     template.appendChild(interior);
     return template;
   });
-  let engine = null, pages = [], pageIndex = 0, pending = null, playing = false, timer = null, direction = 1, lastWidth = 0, resizeTimer = null, resizePending = false;
+  let engine = null, pages = [], pageIndex = 0, pending = null, playing = false, timer = null, direction = 1, resizeTimer = null, resizePending = false;
   const mount = book;
   let touchStart = null;
   const pad = number => String(number).padStart(2, '0');
@@ -296,7 +303,7 @@
           const label = field.closest('.yb-photo')?.querySelector('.yb-photo-label');
           if (label) label.textContent = member.photo ? 'Ảnh thành viên' : 'Ảnh tập thể';
         }
-        else field.textContent = field.dataset.ybField === 'tag' ? `THÀNH VIÊN ${pad(member.id)}` : member.name;
+        else field.textContent = field.dataset.ybField === 'tag' ? (member.role ? member.role.toLocaleUpperCase('vi') : `THÀNH VIÊN ${pad(member.id)}`) : member.name;
       });
       if (side === 1) {
         const details = page.querySelectorAll('.yb-profile-details .yb-detail');
@@ -344,7 +351,7 @@
     if (busy()) {pending = target; return;}
     if (target === pageIndex) return;
     if (!engine) {showFallback(target); return;}
-    if (motion.matches) engine.turnToPage(target);
+    if (!animated) engine.turnToPage(target);
     else engine.flip(target, 'bottom');
   }
   function step(amount) {
@@ -357,36 +364,36 @@
     sync(index);
   }
   function build() {
-    const style = getComputedStyle(cover);
-    const width = Math.floor(cover.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight));
+    const shell = cover.parentElement;
+    const shellStyle = getComputedStyle(shell);
+    const width = Math.floor(shell.clientWidth - parseFloat(shellStyle.paddingLeft) - parseFloat(shellStyle.paddingRight));
     if (width < 1) return;
     if (engine && busy()) {resizePending = true; return;}
     if (engine && engine.getState() === 'fold_corner') {
-      engine.getFlipController().stopMove();
-      engine.getRender().finishAnimation();
+      engine.getFlipController().stopMove(); engine.getRender().finishAnimation();
     }
     const saved = pageIndex;
-    const narrow = width < 740;
-    const pageWidth = Math.floor(width / (narrow ? 1 : 2));
-    const pageHeight = Math.max(narrow && pageWidth >= 300 ? 700 : 780, Math.round(pageWidth * 1.48));
-    lastWidth = width; pending = null; resizePending = false;
-    mount.dataset.reducedMotion = String(motion.matches);
+    // Fixed page coordinates keep the renderer stable at every browser zoom level.
+    // Only the outside cover is scaled to the available width and screen height.
+    const narrow = innerWidth < 900;
+    const pageWidth = 480, pageHeight = 800;
+    const bookWidth = pageWidth * (narrow ? 1 : 2);
+    const coverStyle = getComputedStyle(cover);
+    const coverPadding = parseFloat(coverStyle.paddingLeft) + parseFloat(coverStyle.paddingRight) + 2;
+    const screenHeight = narrow ? Infinity : Math.max(400, innerHeight - 300);
+    const scale = Math.min(1, (width - coverPadding) / bookWidth, screenHeight / pageHeight);
+    pending = null; resizePending = false;
+    cover.style.width = `${bookWidth * scale}px`;
+    cover.style.height = `${pageHeight * scale}px`;
+    cover.style.setProperty('--yb-scale', scale);
+    document.querySelector('#yearbookExperience').style.setProperty('--yb-visible-height', `${pageHeight * scale}px`);
+    Object.assign(mount.style, {width: `${bookWidth}px`, height: `${pageHeight}px`, minWidth: `${bookWidth}px`, minHeight: '0px', maxWidth: 'none'});
+    mount.dataset.reducedMotion = String(!animated);
     if (engine) {
-      // Keep a single renderer: v2.0.7 destroy() does not cancel its RAF loop.
-      Object.assign(engine.getSettings(), {
-        width: pageWidth, height: pageHeight,
-        minWidth: pageWidth, maxWidth: pageWidth, minHeight: pageHeight, maxHeight: pageHeight,
-        showPageCorners: !motion.matches
-      });
-      mount.style.minWidth = `${pageWidth}px`;
-      mount.style.minHeight = `${pageHeight}px`;
-      mount.style.maxWidth = `${2 * pageWidth}px`;
-      engine.getUI().setOrientationStyle(narrow ? 'portrait' : 'landscape');
+      Object.assign(engine.getSettings(), {usePortrait: narrow, showPageCorners: animated});
       engine.update();
       engine.turnToPage(narrow ? saved : Math.floor(saved / 2) * 2);
-      sync(engine.getCurrentPageIndex());
-      updateHint();
-      return;
+      sync(engine.getCurrentPageIndex()); updateHint(); return;
     }
     const target = mount;
     target.replaceChildren(); target.classList.remove('yb-book--fallback');
@@ -400,11 +407,11 @@
       width: pageWidth, height: pageHeight, size: 'fixed',
       minWidth: pageWidth, maxWidth: pageWidth, minHeight: pageHeight, maxHeight: pageHeight,
       startPage: narrow ? saved : Math.floor(saved / 2) * 2,
-      usePortrait: true, showCover: false, autoSize: true,
+      usePortrait: narrow, showCover: false, autoSize: false,
       flippingTime: 1100, drawShadow: true, maxShadowOpacity: .55,
       mobileScrollSupport: true, swipeDistance: 45,
       clickEventForward: true, disableFlipByClick: false,
-      showPageCorners: !motion.matches, useMouseEvents: true
+      showPageCorners: animated, useMouseEvents: true
     });
     engine = instance;
     instance.on('flip', event => sync(event.data));
@@ -422,14 +429,20 @@
       }
     });
     instance.loadFromHTML(pages);
+    // Convert scaled viewport coordinates back into the renderer's page coordinates.
+    const ui = instance.getUI();
+    ui.getMousePos = (x, y) => {
+      const area = ui.getDistElement(); const bounds = area.getBoundingClientRect();
+      return {x: (x - bounds.left) * area.offsetWidth / bounds.width, y: (y - bounds.top) * area.offsetHeight / bounds.height};
+    };
     updateHint();
   }
   function updateHint() {
-    $('ybGestureHint').textContent = motion.matches ? 'Dùng nút mũi tên để chuyển trang' : 'Kéo góc trang giấy để lật · Có thể vuốt trên điện thoại';
+    $('ybGestureHint').textContent = !animated ? 'Dùng nút mũi tên để chuyển trang' : 'Kéo góc trang giấy để lật · Có thể vuốt trên điện thoại';
   }
   members.forEach((member, index) => {
     const button = document.createElement('button'); button.type = 'button'; button.dataset.index = index;
-    button.innerHTML = `<span class="yb-mini-photo"><img alt=""></span><span class="yb-roster-name"><small>${pad(member.id)}</small><strong>${escapeHtml(member.name)}</strong><em>Ước mơ & lời nhắn</em></span>`;
+    button.innerHTML = `<span class="yb-mini-photo"><img alt=""></span><span class="yb-roster-name"><small>${pad(member.id)}</small><strong>${escapeHtml(member.name)}</strong><em>${member.role || 'Ước mơ & lời nhắn'}</em></span>`;
     const rosterImage = button.querySelector('img');
     photoFallback(rosterImage); rosterImage.src = photoSrc(member); rosterImage.alt = `Ảnh ${member.name}`;
     button.addEventListener('click', () => {stop(); turnTo(index * 2);}); roster.appendChild(button);
@@ -494,13 +507,29 @@
   function scheduleResize() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      const style = getComputedStyle(cover);
-      const width = Math.floor(cover.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight));
-      if (Math.abs(width - lastWidth) > 1) build();
+      build();
     }, 120);
   }
-  if ('ResizeObserver' in window) new ResizeObserver(scheduleResize).observe(cover);
-  else addEventListener('resize', scheduleResize);
-  motion.addEventListener('change', () => {stop(); build();});
+  if ('ResizeObserver' in window) new ResizeObserver(scheduleResize).observe(cover.parentElement);
+  addEventListener('resize', scheduleResize);
+  $('ybMotion').addEventListener('click', () => {
+    animated = !animated;
+    try {localStorage.setItem('6b02-yearbook-animation', animated ? 'on' : 'off');} catch (_) {}
+    $('ybMotion').setAttribute('aria-pressed', String(animated));
+    $('ybMotion').textContent = `Hiệu ứng lật: ${animated ? 'Bật' : 'Tắt'}`;
+    stop(); build();
+  });
+  $('ybMotion').setAttribute('aria-pressed', String(animated));
+  $('ybMotion').textContent = `Hiệu ứng lật: ${animated ? 'Bật' : 'Tắt'}`;
+  const initialHash = location.hash;
+  let userScrolled = false;
+  addEventListener('wheel', () => {userScrolled = true;}, {once: true, passive: true});
+  addEventListener('touchstart', () => {userScrolled = true;}, {once: true, passive: true});
+  document.fonts?.ready.then(() => {
+    scheduleResize();
+    if (initialHash === '#gioithieu' && location.hash === initialHash && !userScrolled) {
+      requestAnimationFrame(() => $('gioithieu').scrollIntoView({behavior: 'instant', block: 'start'}));
+    }
+  });
   build();
 })();
